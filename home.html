@@ -1,0 +1,2375 @@
+<html class="js-focus-visible" data-js-focus-visible="">
+      <head>
+            <style type="text/css">
+                  .swal-icon--error {
+                        border-color: #f27474;
+                        -webkit-animation: animateErrorIcon 0.5s;
+                        animation: animateErrorIcon 0.5s;
+                  }
+                  .swal-icon--error__x-mark {
+                        position: relative;
+                        display: block;
+                        -webkit-animation: animateXMark 0.5s;
+                        animation: animateXMark 0.5s;
+                  }
+                  .swal-icon--error__line {
+                        position: absolute;
+                        height: 5px;
+                        width: 47px;
+                        background-color: #f27474;
+                        display: block;
+                        top: 37px;
+                        border-radius: 2px;
+                  }
+                  .swal-icon--error__line--left {
+                        -webkit-transform: rotate(45deg);
+                        transform: rotate(45deg);
+                        left: 17px;
+                  }
+                  .swal-icon--error__line--right {
+                        -webkit-transform: rotate(-45deg);
+                        transform: rotate(-45deg);
+                        right: 16px;
+                  }
+                  @-webkit-keyframes animateErrorIcon {
+                        0% {
+                              -webkit-transform: rotateX(100deg);
+                              transform: rotateX(100deg);
+                              opacity: 0;
+                        }
+                        to {
+                              -webkit-transform: rotateX(0deg);
+                              transform: rotateX(0deg);
+                              opacity: 1;
+                        }
+                  }
+                  @keyframes animateErrorIcon {
+                        0% {
+                              -webkit-transform: rotateX(100deg);
+                              transform: rotateX(100deg);
+                              opacity: 0;
+                        }
+                        to {
+                              -webkit-transform: rotateX(0deg);
+                              transform: rotateX(0deg);
+                              opacity: 1;
+                        }
+                  }
+                  @-webkit-keyframes animateXMark {
+                        0% {
+                              -webkit-transform: scale(0.4);
+                              transform: scale(0.4);
+                              margin-top: 26px;
+                              opacity: 0;
+                        }
+                        50% {
+                              -webkit-transform: scale(0.4);
+                              transform: scale(0.4);
+                              margin-top: 26px;
+                              opacity: 0;
+                        }
+                        80% {
+                              -webkit-transform: scale(1.15);
+                              transform: scale(1.15);
+                              margin-top: -6px;
+                        }
+                        to {
+                              -webkit-transform: scale(1);
+                              transform: scale(1);
+                              margin-top: 0;
+                              opacity: 1;
+                        }
+                  }
+                  @keyframes animateXMark {
+                        0% {
+                              -webkit-transform: scale(0.4);
+                              transform: scale(0.4);
+                              margin-top: 26px;
+                              opacity: 0;
+                        }
+                        50% {
+                              -webkit-transform: scale(0.4);
+                              transform: scale(0.4);
+                              margin-top: 26px;
+                              opacity: 0;
+                        }
+                        80% {
+                              -webkit-transform: scale(1.15);
+                              transform: scale(1.15);
+                              margin-top: -6px;
+                        }
+                        to {
+                              -webkit-transform: scale(1);
+                              transform: scale(1);
+                              margin-top: 0;
+                              opacity: 1;
+                        }
+                  }
+                  .swal-icon--warning {
+                        border-color: #f8bb86;
+                        -webkit-animation: pulseWarning 0.75s infinite alternate;
+                        animation: pulseWarning 0.75s infinite alternate;
+                  }
+                  .swal-icon--warning__body {
+                        width: 5px;
+                        height: 47px;
+                        top: 10px;
+                        border-radius: 2px;
+                        margin-left: -2px;
+                  }
+                  .swal-icon--warning__body,
+                  .swal-icon--warning__dot {
+                        position: absolute;
+                        left: 50%;
+                        background-color: #f8bb86;
+                  }
+                  .swal-icon--warning__dot {
+                        width: 7px;
+                        height: 7px;
+                        border-radius: 50%;
+                        margin-left: -4px;
+                        bottom: -11px;
+                  }
+                  @-webkit-keyframes pulseWarning {
+                        0% {
+                              border-color: #f8d486;
+                        }
+                        to {
+                              border-color: #f8bb86;
+                        }
+                  }
+                  @keyframes pulseWarning {
+                        0% {
+                              border-color: #f8d486;
+                        }
+                        to {
+                              border-color: #f8bb86;
+                        }
+                  }
+                  .swal-icon--success {
+                        border-color: #a5dc86;
+                  }
+                  .swal-icon--success:after,
+                  .swal-icon--success:before {
+                        content: "";
+                        border-radius: 50%;
+                        position: absolute;
+                        width: 60px;
+                        height: 120px;
+                        background: #fff;
+                        -webkit-transform: rotate(45deg);
+                        transform: rotate(45deg);
+                  }
+                  .swal-icon--success:before {
+                        border-radius: 120px 0 0 120px;
+                        top: -7px;
+                        left: -33px;
+                        -webkit-transform: rotate(-45deg);
+                        transform: rotate(-45deg);
+                        -webkit-transform-origin: 60px 60px;
+                        transform-origin: 60px 60px;
+                  }
+                  .swal-icon--success:after {
+                        border-radius: 0 120px 120px 0;
+                        top: -11px;
+                        left: 30px;
+                        -webkit-transform: rotate(-45deg);
+                        transform: rotate(-45deg);
+                        -webkit-transform-origin: 0 60px;
+                        transform-origin: 0 60px;
+                        -webkit-animation: rotatePlaceholder 4.25s ease-in;
+                        animation: rotatePlaceholder 4.25s ease-in;
+                  }
+                  .swal-icon--success__ring {
+                        width: 80px;
+                        height: 80px;
+                        border: 4px solid hsla(98, 55%, 69%, 0.2);
+                        border-radius: 50%;
+                        box-sizing: content-box;
+                        position: absolute;
+                        left: -4px;
+                        top: -4px;
+                        z-index: 2;
+                  }
+                  .swal-icon--success__hide-corners {
+                        width: 5px;
+                        height: 90px;
+                        background-color: #fff;
+                        padding: 1px;
+                        position: absolute;
+                        left: 28px;
+                        top: 8px;
+                        z-index: 1;
+                        -webkit-transform: rotate(-45deg);
+                        transform: rotate(-45deg);
+                  }
+                  .swal-icon--success__line {
+                        height: 5px;
+                        background-color: #a5dc86;
+                        display: block;
+                        border-radius: 2px;
+                        position: absolute;
+                        z-index: 2;
+                  }
+                  .swal-icon--success__line--tip {
+                        width: 25px;
+                        left: 14px;
+                        top: 46px;
+                        -webkit-transform: rotate(45deg);
+                        transform: rotate(45deg);
+                        -webkit-animation: animateSuccessTip 0.75s;
+                        animation: animateSuccessTip 0.75s;
+                  }
+                  .swal-icon--success__line--long {
+                        width: 47px;
+                        right: 8px;
+                        top: 38px;
+                        -webkit-transform: rotate(-45deg);
+                        transform: rotate(-45deg);
+                        -webkit-animation: animateSuccessLong 0.75s;
+                        animation: animateSuccessLong 0.75s;
+                  }
+                  @-webkit-keyframes rotatePlaceholder {
+                        0% {
+                              -webkit-transform: rotate(-45deg);
+                              transform: rotate(-45deg);
+                        }
+                        5% {
+                              -webkit-transform: rotate(-45deg);
+                              transform: rotate(-45deg);
+                        }
+                        12% {
+                              -webkit-transform: rotate(-405deg);
+                              transform: rotate(-405deg);
+                        }
+                        to {
+                              -webkit-transform: rotate(-405deg);
+                              transform: rotate(-405deg);
+                        }
+                  }
+                  @keyframes rotatePlaceholder {
+                        0% {
+                              -webkit-transform: rotate(-45deg);
+                              transform: rotate(-45deg);
+                        }
+                        5% {
+                              -webkit-transform: rotate(-45deg);
+                              transform: rotate(-45deg);
+                        }
+                        12% {
+                              -webkit-transform: rotate(-405deg);
+                              transform: rotate(-405deg);
+                        }
+                        to {
+                              -webkit-transform: rotate(-405deg);
+                              transform: rotate(-405deg);
+                        }
+                  }
+                  @-webkit-keyframes animateSuccessTip {
+                        0% {
+                              width: 0;
+                              left: 1px;
+                              top: 19px;
+                        }
+                        54% {
+                              width: 0;
+                              left: 1px;
+                              top: 19px;
+                        }
+                        70% {
+                              width: 50px;
+                              left: -8px;
+                              top: 37px;
+                        }
+                        84% {
+                              width: 17px;
+                              left: 21px;
+                              top: 48px;
+                        }
+                        to {
+                              width: 25px;
+                              left: 14px;
+                              top: 45px;
+                        }
+                  }
+                  @keyframes animateSuccessTip {
+                        0% {
+                              width: 0;
+                              left: 1px;
+                              top: 19px;
+                        }
+                        54% {
+                              width: 0;
+                              left: 1px;
+                              top: 19px;
+                        }
+                        70% {
+                              width: 50px;
+                              left: -8px;
+                              top: 37px;
+                        }
+                        84% {
+                              width: 17px;
+                              left: 21px;
+                              top: 48px;
+                        }
+                        to {
+                              width: 25px;
+                              left: 14px;
+                              top: 45px;
+                        }
+                  }
+                  @-webkit-keyframes animateSuccessLong {
+                        0% {
+                              width: 0;
+                              right: 46px;
+                              top: 54px;
+                        }
+                        65% {
+                              width: 0;
+                              right: 46px;
+                              top: 54px;
+                        }
+                        84% {
+                              width: 55px;
+                              right: 0;
+                              top: 35px;
+                        }
+                        to {
+                              width: 47px;
+                              right: 8px;
+                              top: 38px;
+                        }
+                  }
+                  @keyframes animateSuccessLong {
+                        0% {
+                              width: 0;
+                              right: 46px;
+                              top: 54px;
+                        }
+                        65% {
+                              width: 0;
+                              right: 46px;
+                              top: 54px;
+                        }
+                        84% {
+                              width: 55px;
+                              right: 0;
+                              top: 35px;
+                        }
+                        to {
+                              width: 47px;
+                              right: 8px;
+                              top: 38px;
+                        }
+                  }
+                  .swal-icon--info {
+                        border-color: #c9dae1;
+                  }
+                  .swal-icon--info:before {
+                        width: 5px;
+                        height: 29px;
+                        bottom: 17px;
+                        border-radius: 2px;
+                        margin-left: -2px;
+                  }
+                  .swal-icon--info:after,
+                  .swal-icon--info:before {
+                        content: "";
+                        position: absolute;
+                        left: 50%;
+                        background-color: #c9dae1;
+                  }
+                  .swal-icon--info:after {
+                        width: 7px;
+                        height: 7px;
+                        border-radius: 50%;
+                        margin-left: -3px;
+                        top: 19px;
+                  }
+                  .swal-icon {
+                        width: 80px;
+                        height: 80px;
+                        border-width: 4px;
+                        border-style: solid;
+                        border-radius: 50%;
+                        padding: 0;
+                        position: relative;
+                        box-sizing: content-box;
+                        margin: 20px auto;
+                  }
+                  .swal-icon:first-child {
+                        margin-top: 32px;
+                  }
+                  .swal-icon--custom {
+                        width: auto;
+                        height: auto;
+                        max-width: 100%;
+                        border: none;
+                        border-radius: 0;
+                  }
+                  .swal-icon img {
+                        max-width: 100%;
+                        max-height: 100%;
+                  }
+                  .swal-title {
+                        color: rgba(0, 0, 0, 0.65);
+                        font-weight: 600;
+                        text-transform: none;
+                        position: relative;
+                        display: block;
+                        padding: 13px 16px;
+                        font-size: 27px;
+                        line-height: normal;
+                        text-align: center;
+                        margin-bottom: 0;
+                  }
+                  .swal-title:first-child {
+                        margin-top: 26px;
+                  }
+                  .swal-title:not(:first-child) {
+                        padding-bottom: 0;
+                  }
+                  .swal-title:not(:last-child) {
+                        margin-bottom: 13px;
+                  }
+                  .swal-text {
+                        font-size: 16px;
+                        position: relative;
+                        float: none;
+                        line-height: normal;
+                        vertical-align: top;
+                        text-align: left;
+                        display: inline-block;
+                        margin: 0;
+                        padding: 0 10px;
+                        font-weight: 400;
+                        color: rgba(0, 0, 0, 0.64);
+                        max-width: calc(100% - 20px);
+                        overflow-wrap: break-word;
+                        box-sizing: border-box;
+                  }
+                  .swal-text:first-child {
+                        margin-top: 45px;
+                  }
+                  .swal-text:last-child {
+                        margin-bottom: 45px;
+                  }
+                  .swal-footer {
+                        text-align: right;
+                        padding-top: 13px;
+                        margin-top: 13px;
+                        padding: 13px 16px;
+                        border-radius: inherit;
+                        border-top-left-radius: 0;
+                        border-top-right-radius: 0;
+                  }
+                  .swal-button-container {
+                        margin: 5px;
+                        display: inline-block;
+                        position: relative;
+                  }
+                  .swal-button {
+                        background-color: #7cd1f9;
+                        color: #fff;
+                        border: none;
+                        box-shadow: none;
+                        border-radius: 5px;
+                        font-weight: 600;
+                        font-size: 14px;
+                        padding: 10px 24px;
+                        margin: 0;
+                        cursor: pointer;
+                  }
+                  .swal-button:not([disabled]):hover {
+                        background-color: #78cbf2;
+                  }
+                  .swal-button:active {
+                        background-color: #70bce0;
+                  }
+                  .swal-button:focus {
+                        outline: none;
+                        box-shadow: 0 0 0 1px #fff,
+                              0 0 0 3px rgba(43, 114, 165, 0.29);
+                  }
+                  .swal-button[disabled] {
+                        opacity: 0.5;
+                        cursor: default;
+                  }
+                  .swal-button::-moz-focus-inner {
+                        border: 0;
+                  }
+                  .swal-button--cancel {
+                        color: #555;
+                        background-color: #efefef;
+                  }
+                  .swal-button--cancel:not([disabled]):hover {
+                        background-color: #e8e8e8;
+                  }
+                  .swal-button--cancel:active {
+                        background-color: #d7d7d7;
+                  }
+                  .swal-button--cancel:focus {
+                        box-shadow: 0 0 0 1px #fff,
+                              0 0 0 3px rgba(116, 136, 150, 0.29);
+                  }
+                  .swal-button--danger {
+                        background-color: #e64942;
+                  }
+                  .swal-button--danger:not([disabled]):hover {
+                        background-color: #df4740;
+                  }
+                  .swal-button--danger:active {
+                        background-color: #cf423b;
+                  }
+                  .swal-button--danger:focus {
+                        box-shadow: 0 0 0 1px #fff,
+                              0 0 0 3px rgba(165, 43, 43, 0.29);
+                  }
+                  .swal-content {
+                        padding: 0 20px;
+                        margin-top: 20px;
+                        font-size: medium;
+                  }
+                  .swal-content:last-child {
+                        margin-bottom: 20px;
+                  }
+                  .swal-content__input,
+                  .swal-content__textarea {
+                        -webkit-appearance: none;
+                        background-color: #fff;
+                        border: none;
+                        font-size: 14px;
+                        display: block;
+                        box-sizing: border-box;
+                        width: 100%;
+                        border: 1px solid rgba(0, 0, 0, 0.14);
+                        padding: 10px 13px;
+                        border-radius: 2px;
+                        transition: border-color 0.2s;
+                  }
+                  .swal-content__input:focus,
+                  .swal-content__textarea:focus {
+                        outline: none;
+                        border-color: #6db8ff;
+                  }
+                  .swal-content__textarea {
+                        resize: vertical;
+                  }
+                  .swal-button--loading {
+                        color: transparent;
+                  }
+                  .swal-button--loading ~ .swal-button__loader {
+                        opacity: 1;
+                  }
+                  .swal-button__loader {
+                        position: absolute;
+                        height: auto;
+                        width: 43px;
+                        z-index: 2;
+                        left: 50%;
+                        top: 50%;
+                        -webkit-transform: translateX(-50%) translateY(-50%);
+                        transform: translateX(-50%) translateY(-50%);
+                        text-align: center;
+                        pointer-events: none;
+                        opacity: 0;
+                  }
+                  .swal-button__loader div {
+                        display: inline-block;
+                        float: none;
+                        vertical-align: baseline;
+                        width: 9px;
+                        height: 9px;
+                        padding: 0;
+                        border: none;
+                        margin: 2px;
+                        opacity: 0.4;
+                        border-radius: 7px;
+                        background-color: hsla(0, 0%, 100%, 0.9);
+                        transition: background 0.2s;
+                        -webkit-animation: swal-loading-anim 1s infinite;
+                        animation: swal-loading-anim 1s infinite;
+                  }
+                  .swal-button__loader div:nth-child(3n + 2) {
+                        -webkit-animation-delay: 0.15s;
+                        animation-delay: 0.15s;
+                  }
+                  .swal-button__loader div:nth-child(3n + 3) {
+                        -webkit-animation-delay: 0.3s;
+                        animation-delay: 0.3s;
+                  }
+                  @-webkit-keyframes swal-loading-anim {
+                        0% {
+                              opacity: 0.4;
+                        }
+                        20% {
+                              opacity: 0.4;
+                        }
+                        50% {
+                              opacity: 1;
+                        }
+                        to {
+                              opacity: 0.4;
+                        }
+                  }
+                  @keyframes swal-loading-anim {
+                        0% {
+                              opacity: 0.4;
+                        }
+                        20% {
+                              opacity: 0.4;
+                        }
+                        50% {
+                              opacity: 1;
+                        }
+                        to {
+                              opacity: 0.4;
+                        }
+                  }
+                  .swal-overlay {
+                        position: fixed;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        text-align: center;
+                        font-size: 0;
+                        overflow-y: auto;
+                        background-color: rgba(0, 0, 0, 0.4);
+                        z-index: 10000;
+                        pointer-events: none;
+                        opacity: 0;
+                        transition: opacity 0.3s;
+                  }
+                  .swal-overlay:before {
+                        content: " ";
+                        display: inline-block;
+                        vertical-align: middle;
+                        height: 100%;
+                  }
+                  .swal-overlay--show-modal {
+                        opacity: 1;
+                        pointer-events: auto;
+                  }
+                  .swal-overlay--show-modal .swal-modal {
+                        opacity: 1;
+                        pointer-events: auto;
+                        box-sizing: border-box;
+                        -webkit-animation: showSweetAlert 0.3s;
+                        animation: showSweetAlert 0.3s;
+                        will-change: transform;
+                  }
+                  .swal-modal {
+                        width: 478px;
+                        opacity: 0;
+                        pointer-events: none;
+                        background-color: #fff;
+                        text-align: center;
+                        border-radius: 5px;
+                        position: static;
+                        margin: 20px auto;
+                        display: inline-block;
+                        vertical-align: middle;
+                        -webkit-transform: scale(1);
+                        transform: scale(1);
+                        -webkit-transform-origin: 50% 50%;
+                        transform-origin: 50% 50%;
+                        z-index: 10001;
+                        transition: opacity 0.2s, -webkit-transform 0.3s;
+                        transition: transform 0.3s, opacity 0.2s;
+                        transition: transform 0.3s, opacity 0.2s,
+                              -webkit-transform 0.3s;
+                  }
+                  @media (max-width: 500px) {
+                        .swal-modal {
+                              width: calc(100% - 20px);
+                        }
+                  }
+                  @-webkit-keyframes showSweetAlert {
+                        0% {
+                              -webkit-transform: scale(1);
+                              transform: scale(1);
+                        }
+                        1% {
+                              -webkit-transform: scale(0.5);
+                              transform: scale(0.5);
+                        }
+                        45% {
+                              -webkit-transform: scale(1.05);
+                              transform: scale(1.05);
+                        }
+                        80% {
+                              -webkit-transform: scale(0.95);
+                              transform: scale(0.95);
+                        }
+                        to {
+                              -webkit-transform: scale(1);
+                              transform: scale(1);
+                        }
+                  }
+                  @keyframes showSweetAlert {
+                        0% {
+                              -webkit-transform: scale(1);
+                              transform: scale(1);
+                        }
+                        1% {
+                              -webkit-transform: scale(0.5);
+                              transform: scale(0.5);
+                        }
+                        45% {
+                              -webkit-transform: scale(1.05);
+                              transform: scale(1.05);
+                        }
+                        80% {
+                              -webkit-transform: scale(0.95);
+                              transform: scale(0.95);
+                        }
+                        to {
+                              -webkit-transform: scale(1);
+                              transform: scale(1);
+                        }
+                  }
+            </style>
+
+            <title>Login | TRIVIEW CAPITAL | EXEMPT MARKET DEALER</title>
+            <meta
+                  content="TriView Capital LTD is a Registered EMD across Western Canada and Ontario."
+                  name="description"
+            />
+            <meta content="Triview real estate investment" name="keywords" />
+            <meta content="TRIVIEW CAPITAL" name="author" />
+            <link rel="icon" type="image/png" href="/triview-favicon.png" />
+
+            <meta charset="utf-8" />
+            <meta content="ie=edge" http-equiv="x-ua-compatible" />
+            <meta
+                  content="width=device-width, initial-scale=1"
+                  name="viewport"
+            />
+            <link
+                  href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500"
+                  rel="stylesheet"
+                  type="text/css"
+            />
+            <link href="./css/bootstrap.min.css" rel="stylesheet" />
+            <link href="/css/login-register.css" rel="stylesheet" />
+            <link
+                  href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700%7CMerriweather:300,300i"
+                  rel="stylesheet"
+            />
+            <link
+                  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+                  rel="stylesheet"
+            />
+            <link href="/css/theme.css" rel="stylesheet" />
+            <script
+                  type="text/javascript"
+                  async=""
+                  src="https://widget.intercom.io/widget/lgdm8c2t"
+            ></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <link href="/css/custom.css" rel="stylesheet" />
+
+            <link href="/css/custom-triview.css?version=1.0" rel="stylesheet" />
+
+            <script>
+                  window.intercomSettings = {
+                        app_id: "pygu3tge"
+                  };
+            </script>
+            <style>
+                  h1,
+                  h2,
+                  h3,
+                  h4 {
+                        color: #fff;
+                  }
+
+                  .download-app-msg {
+                        position: absolute;
+                        width: 100%;
+                        background: #fff;
+                        top: 0;
+                        left: 0;
+                        z-index: 500;
+                        background: linear-gradient(
+                                    to top,
+                                    rgba(14, 102, 200, 0.26),
+                                    rgba(6, 53, 152, 0.7)
+                              ),
+                              url(.../img/cover.png);
+                        background-size: cover;
+                        background-position: bottom;
+                        background-repeat: no-repeat;
+                        text-align: center;
+                        font-size: 24px;
+                        font-weight: bold;
+                        color: #ffffff;
+                  }
+
+                  .download-app-msg .login-logo {
+                        margin-bottom: 16px;
+                        width: 95px;
+                        height: 95px;
+                  }
+
+                  .download-app-msg
+                        .login-page
+                        .login-inside
+                        .login-left
+                        .login-content
+                        p {
+                        margin: 0;
+                        margin-top: 8px;
+                        font-size: 19px;
+                        font-weight: 600;
+                        color: #fff;
+                  }
+
+                  .download-app-msg .store-icons {
+                        height: 40px;
+                  }
+
+                  .download-app-msg {
+                        display: none;
+                  }
+
+                  /* @media only screen and (max-width: 668px) {
+            .download-app-msg {
+                display: block;
+            }
+
+            .login-page {
+                display: none;
+            }
+        } */
+            </style>
+            <style type="text/css">
+                  @font-face {
+                        font-weight: 400;
+                        font-style: normal;
+                        font-family: "Inter-Loom";
+
+                        src: url("https://cdn.loom.com/assets/fonts/inter/Inter-UI-Regular.woff2")
+                              format("woff2");
+                  }
+                  @font-face {
+                        font-weight: 400;
+                        font-style: italic;
+                        font-family: "Inter-Loom";
+
+                        src: url("https://cdn.loom.com/assets/fonts/inter/Inter-UI-Italic.woff2")
+                              format("woff2");
+                  }
+
+                  @font-face {
+                        font-weight: 500;
+                        font-style: normal;
+                        font-family: "Inter-Loom";
+
+                        src: url("https://cdn.loom.com/assets/fonts/inter/Inter-UI-Medium.woff2")
+                              format("woff2");
+                  }
+                  @font-face {
+                        font-weight: 500;
+                        font-style: italic;
+                        font-family: "Inter-Loom";
+
+                        src: url("https://cdn.loom.com/assets/fonts/inter/Inter-UI-MediumItalic.woff2")
+                              format("woff2");
+                  }
+
+                  @font-face {
+                        font-weight: 700;
+                        font-style: normal;
+                        font-family: "Inter-Loom";
+
+                        src: url("https://cdn.loom.com/assets/fonts/inter/Inter-UI-Bold.woff2")
+                              format("woff2");
+                  }
+                  @font-face {
+                        font-weight: 700;
+                        font-style: italic;
+                        font-family: "Inter-Loom";
+
+                        src: url("https://cdn.loom.com/assets/fonts/inter/Inter-UI-BoldItalic.woff2")
+                              format("woff2");
+                  }
+
+                  @font-face {
+                        font-weight: 900;
+                        font-style: normal;
+                        font-family: "Inter-Loom";
+
+                        src: url("https://cdn.loom.com/assets/fonts/inter/Inter-UI-Black.woff2")
+                              format("woff2");
+                  }
+                  @font-face {
+                        font-weight: 900;
+                        font-style: italic;
+                        font-family: "Inter-Loom";
+
+                        src: url("https://cdn.loom.com/assets/fonts/inter/Inter-UI-BlackItalic.woff2")
+                              format("woff2");
+                  }
+            </style>
+            <style>
+                  :root {
+                        --lns-unit: 0.5rem;
+                        --lns-fontSize-small: calc(1.5 * var(--lns-unit, 8px));
+                        --lns-lineHeight-small: 1.5;
+                        --lns-fontSize-medium: calc(
+                              1.75 * var(--lns-unit, 8px)
+                        );
+                        --lns-lineHeight-medium: 1.58;
+                        --lns-fontSize-large: calc(2.25 * var(--lns-unit, 8px));
+                        --lns-lineHeight-large: 1.56;
+                        --lns-fontSize-xlarge: calc(2.8 * var(--lns-unit, 8px));
+                        --lns-lineHeight-xlarge: 1.43;
+                        --lns-fontSize-xxlarge: calc(4 * var(--lns-unit, 8px));
+                        --lns-lineHeight-xxlarge: 1.2;
+                        --lns-fontWeight-normal: 400;
+                        --lns-fontWeight-semiBold: 600;
+                        --lns-radius-medium: 4px;
+                        --lns-radius-large: 8px;
+                        --lns-shadow-small: 0 1px 4px hsla(0, 0%, 0%, 0.15);
+                        --lns-shadow-medium: 0 1px 4px hsla(0, 0%, 0%, 0.1),
+                              0 4px 16px hsla(0, 0%, 0%, 0.07);
+                        --lns-shadow-large: 0 1px 4px hsla(0, 0%, 0%, 0.07),
+                              0 6px 24px hsla(0, 0%, 0%, 0.1);
+                        --lns-space-xsmall: calc(0.5 * var(--lns-unit, 8px));
+                        --lns-space-small: calc(1 * var(--lns-unit, 8px));
+                        --lns-space-medium: calc(2 * var(--lns-unit, 8px));
+                        --lns-space-large: calc(3 * var(--lns-unit, 8px));
+                        --lns-space-xlarge: calc(5 * var(--lns-unit, 8px));
+                        --lns-space-xxlarge: calc(8 * var(--lns-unit, 8px));
+                        --lns-color-purple: hsla(230, 84%, 63%, 1);
+                        --lns-color-salmon: hsla(359, 98%, 68%, 1);
+                        --lns-color-green: hsla(149, 78%, 53%, 1);
+                        --lns-color-blue: hsla(201, 100%, 55%, 1);
+                        --lns-color-red: hsla(356, 86%, 55%, 1);
+                        --lns-color-yellow: hsla(40, 100%, 66%, 1);
+                        --lns-color-grey8: hsla(230, 11%, 19%, 1);
+                        --lns-color-grey7: hsla(230, 10%, 30%, 1);
+                        --lns-color-grey6: hsla(230, 9%, 45%, 1);
+                        --lns-color-grey5: hsla(230, 8%, 60%, 1);
+                        --lns-color-grey4: hsla(230, 7%, 75%, 1);
+                        --lns-color-grey3: hsla(230, 7%, 84%, 1);
+                        --lns-color-grey2: hsla(230, 7%, 92%, 1);
+                        --lns-color-grey1: hsla(230, 7%, 97%, 1);
+                        --lns-color-white: hsla(230, 7%, 100%, 1);
+                        --lns-themeLight-color-body: hsla(230, 11%, 19%, 1);
+                        --lns-themeLight-color-bodyDimmed: hsla(
+                              230,
+                              40%,
+                              19%,
+                              0.6
+                        );
+                        --lns-themeLight-color-background: hsla(
+                              230,
+                              7%,
+                              100%,
+                              1
+                        );
+                        --lns-themeLight-color-backgroundHover: hsla(
+                              230,
+                              8%,
+                              92%,
+                              1
+                        );
+                        --lns-themeLight-color-backgroundActive: hsla(
+                              230,
+                              7%,
+                              84%,
+                              1
+                        );
+                        --lns-themeLight-color-overlay: hsla(230, 7%, 100%, 1);
+                        --lns-themeLight-color-primary: hsla(230, 84%, 63%, 1);
+                        --lns-themeLight-color-primaryHover: hsla(
+                              230,
+                              84%,
+                              53%,
+                              1
+                        );
+                        --lns-themeLight-color-primaryActive: hsla(
+                              230,
+                              84%,
+                              43%,
+                              1
+                        );
+                        --lns-themeLight-color-focusRing: hsla(
+                              230,
+                              84%,
+                              63%,
+                              0.5
+                        );
+                        --lns-themeLight-color-record: hsla(359, 98%, 68%, 1);
+                        --lns-themeLight-color-recordHover: hsla(
+                              359,
+                              98%,
+                              58%,
+                              1
+                        );
+                        --lns-themeLight-color-recordActive: hsla(
+                              359,
+                              98%,
+                              48%,
+                              1
+                        );
+                        --lns-themeLight-color-border: hsla(230, 9%, 45%, 0.2);
+                        --lns-themeLight-color-disabledContent: hsla(
+                              230,
+                              8%,
+                              60%,
+                              1
+                        );
+                        --lns-themeLight-color-disabledBackground: hsla(
+                              230,
+                              7%,
+                              92%,
+                              1
+                        );
+                        --lns-themeLight-color-backdrop: hsla(
+                              230,
+                              11%,
+                              19%,
+                              0.5
+                        );
+                        --lns-themeLight-color-formFieldBorder: hsla(
+                              230,
+                              7%,
+                              84%,
+                              1
+                        );
+                        --lns-themeLight-color-formFieldBackground: hsla(
+                              230,
+                              7%,
+                              100%,
+                              1
+                        );
+                        --lns-themeDark-color-body: hsla(230, 7%, 97%, 1);
+                        --lns-themeDark-color-bodyDimmed: hsla(
+                              230,
+                              40%,
+                              97%,
+                              0.6
+                        );
+                        --lns-themeDark-color-background: hsla(
+                              230,
+                              11%,
+                              19%,
+                              1
+                        );
+                        --lns-themeDark-color-backgroundHover: hsla(
+                              230,
+                              11%,
+                              26%,
+                              1
+                        );
+                        --lns-themeDark-color-backgroundActive: hsla(
+                              230,
+                              11%,
+                              14%,
+                              1
+                        );
+                        --lns-themeDark-color-overlay: hsla(230, 10%, 30%, 1);
+                        --lns-themeDark-color-primary: hsla(230, 84%, 63%, 1);
+                        --lns-themeDark-color-primaryHover: hsla(
+                              230,
+                              84%,
+                              53%,
+                              1
+                        );
+                        --lns-themeDark-color-primaryActive: hsla(
+                              230,
+                              84%,
+                              43%,
+                              1
+                        );
+                        --lns-themeDark-color-focusRing: hsla(
+                              230,
+                              84%,
+                              63%,
+                              0.5
+                        );
+                        --lns-themeDark-color-record: hsla(359, 98%, 68%, 1);
+                        --lns-themeDark-color-recordHover: hsla(
+                              359,
+                              98%,
+                              58%,
+                              1
+                        );
+                        --lns-themeDark-color-recordActive: hsla(
+                              359,
+                              98%,
+                              48%,
+                              1
+                        );
+                        --lns-themeDark-color-border: hsla(230, 7%, 75%, 0.2);
+                        --lns-themeDark-color-disabledContent: hsla(
+                              230,
+                              8%,
+                              60%,
+                              1
+                        );
+                        --lns-themeDark-color-disabledBackground: hsla(
+                              230,
+                              10%,
+                              30%,
+                              1
+                        );
+                        --lns-themeDark-color-backdrop: hsla(
+                              230,
+                              11%,
+                              19%,
+                              0.5
+                        );
+                        --lns-themeDark-color-formFieldBorder: hsla(
+                              230,
+                              9%,
+                              45%,
+                              1
+                        );
+                        --lns-themeDark-color-formFieldBackground: hsla(
+                              230,
+                              11%,
+                              19%,
+                              1
+                        );
+                  }
+
+                  :root,
+                  .theme-light {
+                        --lns-color-body: var(--lns-themeLight-color-body);
+                        --lns-color-bodyDimmed: var(
+                              --lns-themeLight-color-bodyDimmed
+                        );
+                        --lns-color-background: var(
+                              --lns-themeLight-color-background
+                        );
+                        --lns-color-backgroundHover: var(
+                              --lns-themeLight-color-backgroundHover
+                        );
+                        --lns-color-backgroundActive: var(
+                              --lns-themeLight-color-backgroundActive
+                        );
+                        --lns-color-overlay: var(
+                              --lns-themeLight-color-overlay
+                        );
+                        --lns-color-primary: var(
+                              --lns-themeLight-color-primary
+                        );
+                        --lns-color-primaryHover: var(
+                              --lns-themeLight-color-primaryHover
+                        );
+                        --lns-color-primaryActive: var(
+                              --lns-themeLight-color-primaryActive
+                        );
+                        --lns-color-focusRing: var(
+                              --lns-themeLight-color-focusRing
+                        );
+                        --lns-color-record: var(--lns-themeLight-color-record);
+                        --lns-color-recordHover: var(
+                              --lns-themeLight-color-recordHover
+                        );
+                        --lns-color-recordActive: var(
+                              --lns-themeLight-color-recordActive
+                        );
+                        --lns-color-border: var(--lns-themeLight-color-border);
+                        --lns-color-disabledContent: var(
+                              --lns-themeLight-color-disabledContent
+                        );
+                        --lns-color-disabledBackground: var(
+                              --lns-themeLight-color-disabledBackground
+                        );
+                        --lns-color-backdrop: var(
+                              --lns-themeLight-color-backdrop
+                        );
+                        --lns-color-formFieldBorder: var(
+                              --lns-themeLight-color-formFieldBorder
+                        );
+                        --lns-color-formFieldBackground: var(
+                              --lns-themeLight-color-formFieldBackground
+                        );
+                  }
+
+                  .theme-dark {
+                        --lns-color-body: var(--lns-themeDark-color-body);
+                        --lns-color-bodyDimmed: var(
+                              --lns-themeDark-color-bodyDimmed
+                        );
+                        --lns-color-background: var(
+                              --lns-themeDark-color-background
+                        );
+                        --lns-color-backgroundHover: var(
+                              --lns-themeDark-color-backgroundHover
+                        );
+                        --lns-color-backgroundActive: var(
+                              --lns-themeDark-color-backgroundActive
+                        );
+                        --lns-color-overlay: var(--lns-themeDark-color-overlay);
+                        --lns-color-primary: var(--lns-themeDark-color-primary);
+                        --lns-color-primaryHover: var(
+                              --lns-themeDark-color-primaryHover
+                        );
+                        --lns-color-primaryActive: var(
+                              --lns-themeDark-color-primaryActive
+                        );
+                        --lns-color-focusRing: var(
+                              --lns-themeDark-color-focusRing
+                        );
+                        --lns-color-record: var(--lns-themeDark-color-record);
+                        --lns-color-recordHover: var(
+                              --lns-themeDark-color-recordHover
+                        );
+                        --lns-color-recordActive: var(
+                              --lns-themeDark-color-recordActive
+                        );
+                        --lns-color-border: var(--lns-themeDark-color-border);
+                        --lns-color-disabledContent: var(
+                              --lns-themeDark-color-disabledContent
+                        );
+                        --lns-color-disabledBackground: var(
+                              --lns-themeDark-color-disabledBackground
+                        );
+                        --lns-color-backdrop: var(
+                              --lns-themeDark-color-backdrop
+                        );
+                        --lns-color-formFieldBorder: var(
+                              --lns-themeDark-color-formFieldBorder
+                        );
+                        --lns-color-formFieldBackground: var(
+                              --lns-themeDark-color-formFieldBackground
+                        );
+                  }
+            </style>
+            <style>
+                  :root {
+                        --lns-unit: 0.5rem;
+                        --lns-fontSize-small: calc(1.5 * var(--lns-unit, 8px));
+                        --lns-lineHeight-small: 1.5;
+                        --lns-fontSize-medium: calc(
+                              1.75 * var(--lns-unit, 8px)
+                        );
+                        --lns-lineHeight-medium: 1.58;
+                        --lns-fontSize-large: calc(2.25 * var(--lns-unit, 8px));
+                        --lns-lineHeight-large: 1.56;
+                        --lns-fontSize-xlarge: calc(2.8 * var(--lns-unit, 8px));
+                        --lns-lineHeight-xlarge: 1.43;
+                        --lns-fontSize-xxlarge: calc(4 * var(--lns-unit, 8px));
+                        --lns-lineHeight-xxlarge: 1.2;
+                        --lns-fontWeight-normal: 400;
+                        --lns-fontWeight-semiBold: 600;
+                        --lns-radius-medium: 4px;
+                        --lns-radius-large: 8px;
+                        --lns-shadow-small: 0 1px 4px hsla(0, 0%, 0%, 0.15);
+                        --lns-shadow-medium: 0 1px 4px hsla(0, 0%, 0%, 0.1),
+                              0 4px 16px hsla(0, 0%, 0%, 0.07);
+                        --lns-shadow-large: 0 1px 4px hsla(0, 0%, 0%, 0.07),
+                              0 6px 24px hsla(0, 0%, 0%, 0.1);
+                        --lns-space-xsmall: calc(0.5 * var(--lns-unit, 8px));
+                        --lns-space-small: calc(1 * var(--lns-unit, 8px));
+                        --lns-space-medium: calc(2 * var(--lns-unit, 8px));
+                        --lns-space-large: calc(3 * var(--lns-unit, 8px));
+                        --lns-space-xlarge: calc(5 * var(--lns-unit, 8px));
+                        --lns-space-xxlarge: calc(8 * var(--lns-unit, 8px));
+                        --lns-color-purple: hsla(230, 84%, 63%, 1);
+                        --lns-color-salmon: hsla(359, 98%, 68%, 1);
+                        --lns-color-green: hsla(149, 78%, 53%, 1);
+                        --lns-color-blue: hsla(201, 100%, 55%, 1);
+                        --lns-color-red: hsla(356, 86%, 55%, 1);
+                        --lns-color-yellow: hsla(40, 100%, 66%, 1);
+                        --lns-color-grey8: hsla(230, 11%, 19%, 1);
+                        --lns-color-grey7: hsla(230, 10%, 30%, 1);
+                        --lns-color-grey6: hsla(230, 9%, 45%, 1);
+                        --lns-color-grey5: hsla(230, 8%, 60%, 1);
+                        --lns-color-grey4: hsla(230, 7%, 75%, 1);
+                        --lns-color-grey3: hsla(230, 7%, 84%, 1);
+                        --lns-color-grey2: hsla(230, 7%, 92%, 1);
+                        --lns-color-grey1: hsla(230, 7%, 97%, 1);
+                        --lns-color-white: hsla(230, 7%, 100%, 1);
+                        --lns-themeLight-color-body: hsla(230, 11%, 19%, 1);
+                        --lns-themeLight-color-bodyDimmed: hsla(
+                              230,
+                              40%,
+                              19%,
+                              0.6
+                        );
+                        --lns-themeLight-color-background: hsla(
+                              230,
+                              7%,
+                              100%,
+                              1
+                        );
+                        --lns-themeLight-color-backgroundHover: hsla(
+                              230,
+                              8%,
+                              92%,
+                              1
+                        );
+                        --lns-themeLight-color-backgroundActive: hsla(
+                              230,
+                              7%,
+                              84%,
+                              1
+                        );
+                        --lns-themeLight-color-overlay: hsla(230, 7%, 100%, 1);
+                        --lns-themeLight-color-primary: hsla(230, 84%, 63%, 1);
+                        --lns-themeLight-color-primaryHover: hsla(
+                              230,
+                              84%,
+                              53%,
+                              1
+                        );
+                        --lns-themeLight-color-primaryActive: hsla(
+                              230,
+                              84%,
+                              43%,
+                              1
+                        );
+                        --lns-themeLight-color-focusRing: hsla(
+                              230,
+                              84%,
+                              63%,
+                              0.5
+                        );
+                        --lns-themeLight-color-record: hsla(359, 98%, 68%, 1);
+                        --lns-themeLight-color-recordHover: hsla(
+                              359,
+                              98%,
+                              58%,
+                              1
+                        );
+                        --lns-themeLight-color-recordActive: hsla(
+                              359,
+                              98%,
+                              48%,
+                              1
+                        );
+                        --lns-themeLight-color-border: hsla(230, 9%, 45%, 0.2);
+                        --lns-themeLight-color-disabledContent: hsla(
+                              230,
+                              8%,
+                              60%,
+                              1
+                        );
+                        --lns-themeLight-color-disabledBackground: hsla(
+                              230,
+                              7%,
+                              92%,
+                              1
+                        );
+                        --lns-themeLight-color-backdrop: hsla(
+                              230,
+                              11%,
+                              19%,
+                              0.5
+                        );
+                        --lns-themeLight-color-formFieldBorder: hsla(
+                              230,
+                              7%,
+                              84%,
+                              1
+                        );
+                        --lns-themeLight-color-formFieldBackground: hsla(
+                              230,
+                              7%,
+                              100%,
+                              1
+                        );
+                        --lns-themeDark-color-body: hsla(230, 7%, 97%, 1);
+                        --lns-themeDark-color-bodyDimmed: hsla(
+                              230,
+                              40%,
+                              97%,
+                              0.6
+                        );
+                        --lns-themeDark-color-background: hsla(
+                              230,
+                              11%,
+                              19%,
+                              1
+                        );
+                        --lns-themeDark-color-backgroundHover: hsla(
+                              230,
+                              11%,
+                              26%,
+                              1
+                        );
+                        --lns-themeDark-color-backgroundActive: hsla(
+                              230,
+                              11%,
+                              14%,
+                              1
+                        );
+                        --lns-themeDark-color-overlay: hsla(230, 10%, 30%, 1);
+                        --lns-themeDark-color-primary: hsla(230, 84%, 63%, 1);
+                        --lns-themeDark-color-primaryHover: hsla(
+                              230,
+                              84%,
+                              53%,
+                              1
+                        );
+                        --lns-themeDark-color-primaryActive: hsla(
+                              230,
+                              84%,
+                              43%,
+                              1
+                        );
+                        --lns-themeDark-color-focusRing: hsla(
+                              230,
+                              84%,
+                              63%,
+                              0.5
+                        );
+                        --lns-themeDark-color-record: hsla(359, 98%, 68%, 1);
+                        --lns-themeDark-color-recordHover: hsla(
+                              359,
+                              98%,
+                              58%,
+                              1
+                        );
+                        --lns-themeDark-color-recordActive: hsla(
+                              359,
+                              98%,
+                              48%,
+                              1
+                        );
+                        --lns-themeDark-color-border: hsla(230, 7%, 75%, 0.2);
+                        --lns-themeDark-color-disabledContent: hsla(
+                              230,
+                              8%,
+                              60%,
+                              1
+                        );
+                        --lns-themeDark-color-disabledBackground: hsla(
+                              230,
+                              10%,
+                              30%,
+                              1
+                        );
+                        --lns-themeDark-color-backdrop: hsla(
+                              230,
+                              11%,
+                              19%,
+                              0.5
+                        );
+                        --lns-themeDark-color-formFieldBorder: hsla(
+                              230,
+                              9%,
+                              45%,
+                              1
+                        );
+                        --lns-themeDark-color-formFieldBackground: hsla(
+                              230,
+                              11%,
+                              19%,
+                              1
+                        );
+                  }
+
+                  :root,
+                  .theme-light {
+                        --lns-color-body: var(--lns-themeLight-color-body);
+                        --lns-color-bodyDimmed: var(
+                              --lns-themeLight-color-bodyDimmed
+                        );
+                        --lns-color-background: var(
+                              --lns-themeLight-color-background
+                        );
+                        --lns-color-backgroundHover: var(
+                              --lns-themeLight-color-backgroundHover
+                        );
+                        --lns-color-backgroundActive: var(
+                              --lns-themeLight-color-backgroundActive
+                        );
+                        --lns-color-overlay: var(
+                              --lns-themeLight-color-overlay
+                        );
+                        --lns-color-primary: var(
+                              --lns-themeLight-color-primary
+                        );
+                        --lns-color-primaryHover: var(
+                              --lns-themeLight-color-primaryHover
+                        );
+                        --lns-color-primaryActive: var(
+                              --lns-themeLight-color-primaryActive
+                        );
+                        --lns-color-focusRing: var(
+                              --lns-themeLight-color-focusRing
+                        );
+                        --lns-color-record: var(--lns-themeLight-color-record);
+                        --lns-color-recordHover: var(
+                              --lns-themeLight-color-recordHover
+                        );
+                        --lns-color-recordActive: var(
+                              --lns-themeLight-color-recordActive
+                        );
+                        --lns-color-border: var(--lns-themeLight-color-border);
+                        --lns-color-disabledContent: var(
+                              --lns-themeLight-color-disabledContent
+                        );
+                        --lns-color-disabledBackground: var(
+                              --lns-themeLight-color-disabledBackground
+                        );
+                        --lns-color-backdrop: var(
+                              --lns-themeLight-color-backdrop
+                        );
+                        --lns-color-formFieldBorder: var(
+                              --lns-themeLight-color-formFieldBorder
+                        );
+                        --lns-color-formFieldBackground: var(
+                              --lns-themeLight-color-formFieldBackground
+                        );
+                  }
+
+                  .theme-dark {
+                        --lns-color-body: var(--lns-themeDark-color-body);
+                        --lns-color-bodyDimmed: var(
+                              --lns-themeDark-color-bodyDimmed
+                        );
+                        --lns-color-background: var(
+                              --lns-themeDark-color-background
+                        );
+                        --lns-color-backgroundHover: var(
+                              --lns-themeDark-color-backgroundHover
+                        );
+                        --lns-color-backgroundActive: var(
+                              --lns-themeDark-color-backgroundActive
+                        );
+                        --lns-color-overlay: var(--lns-themeDark-color-overlay);
+                        --lns-color-primary: var(--lns-themeDark-color-primary);
+                        --lns-color-primaryHover: var(
+                              --lns-themeDark-color-primaryHover
+                        );
+                        --lns-color-primaryActive: var(
+                              --lns-themeDark-color-primaryActive
+                        );
+                        --lns-color-focusRing: var(
+                              --lns-themeDark-color-focusRing
+                        );
+                        --lns-color-record: var(--lns-themeDark-color-record);
+                        --lns-color-recordHover: var(
+                              --lns-themeDark-color-recordHover
+                        );
+                        --lns-color-recordActive: var(
+                              --lns-themeDark-color-recordActive
+                        );
+                        --lns-color-border: var(--lns-themeDark-color-border);
+                        --lns-color-disabledContent: var(
+                              --lns-themeDark-color-disabledContent
+                        );
+                        --lns-color-disabledBackground: var(
+                              --lns-themeDark-color-disabledBackground
+                        );
+                        --lns-color-backdrop: var(
+                              --lns-themeDark-color-backdrop
+                        );
+                        --lns-color-formFieldBorder: var(
+                              --lns-themeDark-color-formFieldBorder
+                        );
+                        --lns-color-formFieldBackground: var(
+                              --lns-themeDark-color-formFieldBackground
+                        );
+                  }
+            </style>
+            <style>
+                  :root {
+                        --lns-unit: 0.5rem;
+                        --lns-fontSize-small: calc(1.5 * var(--lns-unit, 8px));
+                        --lns-lineHeight-small: 1.5;
+                        --lns-fontSize-medium: calc(
+                              1.75 * var(--lns-unit, 8px)
+                        );
+                        --lns-lineHeight-medium: 1.58;
+                        --lns-fontSize-large: calc(2.25 * var(--lns-unit, 8px));
+                        --lns-lineHeight-large: 1.56;
+                        --lns-fontSize-xlarge: calc(2.8 * var(--lns-unit, 8px));
+                        --lns-lineHeight-xlarge: 1.43;
+                        --lns-fontSize-xxlarge: calc(4 * var(--lns-unit, 8px));
+                        --lns-lineHeight-xxlarge: 1.2;
+                        --lns-fontWeight-normal: 400;
+                        --lns-fontWeight-semiBold: 600;
+                        --lns-radius-medium: 4px;
+                        --lns-radius-large: 8px;
+                        --lns-shadow-small: 0 1px 4px hsla(0, 0%, 0%, 0.15);
+                        --lns-shadow-medium: 0 1px 4px hsla(0, 0%, 0%, 0.1),
+                              0 4px 16px hsla(0, 0%, 0%, 0.07);
+                        --lns-shadow-large: 0 1px 4px hsla(0, 0%, 0%, 0.07),
+                              0 6px 24px hsla(0, 0%, 0%, 0.1);
+                        --lns-space-xsmall: calc(0.5 * var(--lns-unit, 8px));
+                        --lns-space-small: calc(1 * var(--lns-unit, 8px));
+                        --lns-space-medium: calc(2 * var(--lns-unit, 8px));
+                        --lns-space-large: calc(3 * var(--lns-unit, 8px));
+                        --lns-space-xlarge: calc(5 * var(--lns-unit, 8px));
+                        --lns-space-xxlarge: calc(8 * var(--lns-unit, 8px));
+                        --lns-color-purple: hsla(230, 84%, 63%, 1);
+                        --lns-color-salmon: hsla(359, 98%, 68%, 1);
+                        --lns-color-green: hsla(149, 78%, 53%, 1);
+                        --lns-color-blue: hsla(201, 100%, 55%, 1);
+                        --lns-color-red: hsla(356, 86%, 55%, 1);
+                        --lns-color-yellow: hsla(40, 100%, 66%, 1);
+                        --lns-color-grey8: hsla(230, 11%, 19%, 1);
+                        --lns-color-grey7: hsla(230, 10%, 30%, 1);
+                        --lns-color-grey6: hsla(230, 9%, 45%, 1);
+                        --lns-color-grey5: hsla(230, 8%, 60%, 1);
+                        --lns-color-grey4: hsla(230, 7%, 75%, 1);
+                        --lns-color-grey3: hsla(230, 7%, 84%, 1);
+                        --lns-color-grey2: hsla(230, 7%, 92%, 1);
+                        --lns-color-grey1: hsla(230, 7%, 97%, 1);
+                        --lns-color-white: hsla(230, 7%, 100%, 1);
+                        --lns-themeLight-color-body: hsla(230, 11%, 19%, 1);
+                        --lns-themeLight-color-bodyDimmed: hsla(
+                              230,
+                              40%,
+                              19%,
+                              0.6
+                        );
+                        --lns-themeLight-color-background: hsla(
+                              230,
+                              7%,
+                              100%,
+                              1
+                        );
+                        --lns-themeLight-color-backgroundHover: hsla(
+                              230,
+                              8%,
+                              92%,
+                              1
+                        );
+                        --lns-themeLight-color-backgroundActive: hsla(
+                              230,
+                              7%,
+                              84%,
+                              1
+                        );
+                        --lns-themeLight-color-overlay: hsla(230, 7%, 100%, 1);
+                        --lns-themeLight-color-primary: hsla(230, 84%, 63%, 1);
+                        --lns-themeLight-color-primaryHover: hsla(
+                              230,
+                              84%,
+                              53%,
+                              1
+                        );
+                        --lns-themeLight-color-primaryActive: hsla(
+                              230,
+                              84%,
+                              43%,
+                              1
+                        );
+                        --lns-themeLight-color-focusRing: hsla(
+                              230,
+                              84%,
+                              63%,
+                              0.5
+                        );
+                        --lns-themeLight-color-record: hsla(359, 98%, 68%, 1);
+                        --lns-themeLight-color-recordHover: hsla(
+                              359,
+                              98%,
+                              58%,
+                              1
+                        );
+                        --lns-themeLight-color-recordActive: hsla(
+                              359,
+                              98%,
+                              48%,
+                              1
+                        );
+                        --lns-themeLight-color-border: hsla(230, 9%, 45%, 0.2);
+                        --lns-themeLight-color-disabledContent: hsla(
+                              230,
+                              8%,
+                              60%,
+                              1
+                        );
+                        --lns-themeLight-color-disabledBackground: hsla(
+                              230,
+                              7%,
+                              92%,
+                              1
+                        );
+                        --lns-themeLight-color-backdrop: hsla(
+                              230,
+                              11%,
+                              19%,
+                              0.5
+                        );
+                        --lns-themeLight-color-formFieldBorder: hsla(
+                              230,
+                              7%,
+                              84%,
+                              1
+                        );
+                        --lns-themeLight-color-formFieldBackground: hsla(
+                              230,
+                              7%,
+                              100%,
+                              1
+                        );
+                        --lns-themeDark-color-body: hsla(230, 7%, 97%, 1);
+                        --lns-themeDark-color-bodyDimmed: hsla(
+                              230,
+                              40%,
+                              97%,
+                              0.6
+                        );
+                        --lns-themeDark-color-background: hsla(
+                              230,
+                              11%,
+                              19%,
+                              1
+                        );
+                        --lns-themeDark-color-backgroundHover: hsla(
+                              230,
+                              11%,
+                              26%,
+                              1
+                        );
+                        --lns-themeDark-color-backgroundActive: hsla(
+                              230,
+                              11%,
+                              14%,
+                              1
+                        );
+                        --lns-themeDark-color-overlay: hsla(230, 10%, 30%, 1);
+                        --lns-themeDark-color-primary: hsla(230, 84%, 63%, 1);
+                        --lns-themeDark-color-primaryHover: hsla(
+                              230,
+                              84%,
+                              53%,
+                              1
+                        );
+                        --lns-themeDark-color-primaryActive: hsla(
+                              230,
+                              84%,
+                              43%,
+                              1
+                        );
+                        --lns-themeDark-color-focusRing: hsla(
+                              230,
+                              84%,
+                              63%,
+                              0.5
+                        );
+                        --lns-themeDark-color-record: hsla(359, 98%, 68%, 1);
+                        --lns-themeDark-color-recordHover: hsla(
+                              359,
+                              98%,
+                              58%,
+                              1
+                        );
+                        --lns-themeDark-color-recordActive: hsla(
+                              359,
+                              98%,
+                              48%,
+                              1
+                        );
+                        --lns-themeDark-color-border: hsla(230, 7%, 75%, 0.2);
+                        --lns-themeDark-color-disabledContent: hsla(
+                              230,
+                              8%,
+                              60%,
+                              1
+                        );
+                        --lns-themeDark-color-disabledBackground: hsla(
+                              230,
+                              10%,
+                              30%,
+                              1
+                        );
+                        --lns-themeDark-color-backdrop: hsla(
+                              230,
+                              11%,
+                              19%,
+                              0.5
+                        );
+                        --lns-themeDark-color-formFieldBorder: hsla(
+                              230,
+                              9%,
+                              45%,
+                              1
+                        );
+                        --lns-themeDark-color-formFieldBackground: hsla(
+                              230,
+                              11%,
+                              19%,
+                              1
+                        );
+                  }
+
+                  :root,
+                  .theme-light {
+                        --lns-color-body: var(--lns-themeLight-color-body);
+                        --lns-color-bodyDimmed: var(
+                              --lns-themeLight-color-bodyDimmed
+                        );
+                        --lns-color-background: var(
+                              --lns-themeLight-color-background
+                        );
+                        --lns-color-backgroundHover: var(
+                              --lns-themeLight-color-backgroundHover
+                        );
+                        --lns-color-backgroundActive: var(
+                              --lns-themeLight-color-backgroundActive
+                        );
+                        --lns-color-overlay: var(
+                              --lns-themeLight-color-overlay
+                        );
+                        --lns-color-primary: var(
+                              --lns-themeLight-color-primary
+                        );
+                        --lns-color-primaryHover: var(
+                              --lns-themeLight-color-primaryHover
+                        );
+                        --lns-color-primaryActive: var(
+                              --lns-themeLight-color-primaryActive
+                        );
+                        --lns-color-focusRing: var(
+                              --lns-themeLight-color-focusRing
+                        );
+                        --lns-color-record: var(--lns-themeLight-color-record);
+                        --lns-color-recordHover: var(
+                              --lns-themeLight-color-recordHover
+                        );
+                        --lns-color-recordActive: var(
+                              --lns-themeLight-color-recordActive
+                        );
+                        --lns-color-border: var(--lns-themeLight-color-border);
+                        --lns-color-disabledContent: var(
+                              --lns-themeLight-color-disabledContent
+                        );
+                        --lns-color-disabledBackground: var(
+                              --lns-themeLight-color-disabledBackground
+                        );
+                        --lns-color-backdrop: var(
+                              --lns-themeLight-color-backdrop
+                        );
+                        --lns-color-formFieldBorder: var(
+                              --lns-themeLight-color-formFieldBorder
+                        );
+                        --lns-color-formFieldBackground: var(
+                              --lns-themeLight-color-formFieldBackground
+                        );
+                  }
+
+                  .theme-dark {
+                        --lns-color-body: var(--lns-themeDark-color-body);
+                        --lns-color-bodyDimmed: var(
+                              --lns-themeDark-color-bodyDimmed
+                        );
+                        --lns-color-background: var(
+                              --lns-themeDark-color-background
+                        );
+                        --lns-color-backgroundHover: var(
+                              --lns-themeDark-color-backgroundHover
+                        );
+                        --lns-color-backgroundActive: var(
+                              --lns-themeDark-color-backgroundActive
+                        );
+                        --lns-color-overlay: var(--lns-themeDark-color-overlay);
+                        --lns-color-primary: var(--lns-themeDark-color-primary);
+                        --lns-color-primaryHover: var(
+                              --lns-themeDark-color-primaryHover
+                        );
+                        --lns-color-primaryActive: var(
+                              --lns-themeDark-color-primaryActive
+                        );
+                        --lns-color-focusRing: var(
+                              --lns-themeDark-color-focusRing
+                        );
+                        --lns-color-record: var(--lns-themeDark-color-record);
+                        --lns-color-recordHover: var(
+                              --lns-themeDark-color-recordHover
+                        );
+                        --lns-color-recordActive: var(
+                              --lns-themeDark-color-recordActive
+                        );
+                        --lns-color-border: var(--lns-themeDark-color-border);
+                        --lns-color-disabledContent: var(
+                              --lns-themeDark-color-disabledContent
+                        );
+                        --lns-color-disabledBackground: var(
+                              --lns-themeDark-color-disabledBackground
+                        );
+                        --lns-color-backdrop: var(
+                              --lns-themeDark-color-backdrop
+                        );
+                        --lns-color-formFieldBorder: var(
+                              --lns-themeDark-color-formFieldBorder
+                        );
+                        --lns-color-formFieldBackground: var(
+                              --lns-themeDark-color-formFieldBackground
+                        );
+                  }
+            </style>
+      </head>
+
+      <body
+            class="auth-wrapper body-login bg-cover bg-login"
+            data-gr-c-s-loaded="true"
+      >
+            <div class="login-page">
+                  <div class="row login-inside">
+                        <div class="col-xs-6 col-sm-6 login-left">
+                              <div class="login-content text-center">
+                                    <a href="/">
+                                          <img
+                                                alt=""
+                                                src="/img/logos/TriView-t.png"
+                                                class="login-logo center"
+                                          />
+                                    </a>
+                                    <h1>
+                                          <span class="reitium-font"
+                                                >Triview Capital</span
+                                          >
+                                    </h1>
+                                    <!-- <p class="phrase">Real Estate for Everyone<sup>&trade;</sup></p> -->
+                                    <p class="phrase"></p>
+                              </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 login-right">
+                              <div class="text-right create-account">
+                                    <p>
+                                          New to Triview Capital?<a
+                                                class=""
+                                                href="/register/investor/step1"
+                                                >Create Account</a
+                                          >
+                                    </p>
+                              </div>
+                              <div class="right-inside">
+                                    <div class="form-content">
+                                          <h2>Login</h2>
+                                          <form
+                                                action=""
+                                                method="POST"
+                                                _lpchecked="1"
+                                          >
+                                                <div class="form-group mb-16">
+                                                      <input
+                                                            class="form-control"
+                                                            placeholder="Enter your username"
+                                                            type="text"
+                                                            name="username"
+                                                            autocomplete="off"
+                                                            style='background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAkCAYAAADo6zjiAAAAAXNSR0IArs4c6QAAAnVJREFUWAntVzuL4lAUPokBsVB0t9odK8VCLCal3Q4WbmUpCFv6DyymEmys9gf4B4RlS7GwEWQsBAsL195q2J3KWIiVrz0nJBcTk9yr3jCw7AG5j3PO9325j2OiAFq73X7Y7/ffsft0Op0+05wsUxTlD2K9aJr23Gw2f7txFYv8FxJ/dDtljlHICkU8ukWo9ORhk9ODEIe1yo7nUnH05JgJd3DBpcre8yD9Xly0Au9q/7aAfD4PjUYDqPWzUFegUChAIpEAav0sVAF4901eu/USEaoAL0L3nENANBqFbDYLqVTKHQe3+i6AXBOaPU4mk1Cv1yEej8PxeIR+vw/z+dx03+qzsYNatgLFYtEkp2BVVaFUKrG8W30MIKDDBATEhOpiAqbTKWw2G5OMtmA0GjHiW30MIKCjtFqtk+2ng5ZOp8EwDFiv1/a02Qb5HIGcAV7JNwwZW+8Hrw4BnFypbhRioAidbYFUdAEw/Gf8QO8H7ybA0viF1QEB0cIhmUwGqtUqxGIxM2cymcBwOLzIx1X4JF0A1YxyuWzWkgtGjwlpAiKRCFQqFdB13YPGf0qagFqtBrlczmSiOkJGFZVnKl4Hem+/26hYEfHhcIBerwe73U4IkyS+CEVygpbLJQwGA+h2u7BYLIC2RMSwFmjPeB+/4om8+8NkNpsxzqCXEBaEHZW+VFDEIyb8kLUd5wS8vnkIrc+lb7xg8p//d4jE82L4x5SHcKf/v4CrCxEe1Deq4byVX61WrBBtt1vPcMK6WgAijfFX80Q8m+x0Omcj3+746jNAdQOVG76Qgg7CIKyrBeCVfcVEHQF+0hIK8rEwyqFcwiCsv+R847qxq2vXAAAAAElFTkSuQmCC"); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;'
+                                                      />
+                                                      <div
+                                                            class="pre-icon os-icon os-icon-user-male-circle"
+                                                      ></div>
+                                                </div>
+                                                <div class="form-group mb-16">
+                                                      <input
+                                                            class="form-control"
+                                                            placeholder="Enter your password"
+                                                            type="password"
+                                                            name="password"
+                                                            autocomplete="off"
+                                                            style='background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAkCAYAAADo6zjiAAAAAXNSR0IArs4c6QAAAnVJREFUWAntVzuL4lAUPokBsVB0t9odK8VCLCal3Q4WbmUpCFv6DyymEmys9gf4B4RlS7GwEWQsBAsL195q2J3KWIiVrz0nJBcTk9yr3jCw7AG5j3PO9325j2OiAFq73X7Y7/ffsft0Op0+05wsUxTlD2K9aJr23Gw2f7txFYv8FxJ/dDtljlHICkU8ukWo9ORhk9ODEIe1yo7nUnH05JgJd3DBpcre8yD9Xly0Au9q/7aAfD4PjUYDqPWzUFegUChAIpEAav0sVAF4901eu/USEaoAL0L3nENANBqFbDYLqVTKHQe3+i6AXBOaPU4mk1Cv1yEej8PxeIR+vw/z+dx03+qzsYNatgLFYtEkp2BVVaFUKrG8W30MIKDDBATEhOpiAqbTKWw2G5OMtmA0GjHiW30MIKCjtFqtk+2ng5ZOp8EwDFiv1/a02Qb5HIGcAV7JNwwZW+8Hrw4BnFypbhRioAidbYFUdAEw/Gf8QO8H7ybA0viF1QEB0cIhmUwGqtUqxGIxM2cymcBwOLzIx1X4JF0A1YxyuWzWkgtGjwlpAiKRCFQqFdB13YPGf0qagFqtBrlczmSiOkJGFZVnKl4Hem+/26hYEfHhcIBerwe73U4IkyS+CEVygpbLJQwGA+h2u7BYLIC2RMSwFmjPeB+/4om8+8NkNpsxzqCXEBaEHZW+VFDEIyb8kLUd5wS8vnkIrc+lb7xg8p//d4jE82L4x5SHcKf/v4CrCxEe1Deq4byVX61WrBBtt1vPcMK6WgAijfFX80Q8m+x0Omcj3+746jNAdQOVG76Qgg7CIKyrBeCVfcVEHQF+0hIK8rEwyqFcwiCsv+R847qxq2vXAAAAAElFTkSuQmCC"); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;'
+                                                      />
+                                                      <div
+                                                            class="pre-icon os-icon os-icon-fingerprint"
+                                                      ></div>
+                                                </div>
+                                                <div class="form-group">
+                                                      <label class="checkbox">
+                                                            <input
+                                                                  type="checkbox"
+                                                                  value=""
+                                                                  name="keepsignedin"
+                                                            />
+                                                            <span class="ml-8"
+                                                                  >Keep me
+                                                                  Signed
+                                                                  in</span
+                                                            >
+                                                      </label>
+                                                </div>
+                                                <div class="text-center">
+                                                      <button
+                                                            class="btn btn-primary btn-block login-btn"
+                                                      >
+                                                            Log in
+                                                      </button>
+                                                      <a
+                                                            href="/forgotpassword"
+                                                            class="forgot-password mt-24"
+                                                            >Forgot password?</a
+                                                      >
+
+                                                      <a
+                                                            href="http://www.reitium.com"
+                                                            class="forgot-password mt-24"
+                                                            >powered by
+                                                            REITIUM</a
+                                                      >
+                                                </div>
+                                          </form>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+
+            <script>
+                  (function() {
+                        var w = window;
+                        var ic = w.Intercom;
+                        if (typeof ic === "function") {
+                              ic("reattach_activator");
+                              ic("update", intercomSettings);
+                        } else {
+                              var d = document;
+                              var i = function() {
+                                    i.c(arguments);
+                              };
+                              i.q = [];
+                              i.c = function(args) {
+                                    i.q.push(args);
+                              };
+                              w.Intercom = i;
+                              function l() {
+                                    var s = d.createElement("script");
+                                    s.type = "text/javascript";
+                                    s.async = true;
+                                    s.src =
+                                          "https://widget.intercom.io/widget/lgdm8c2t";
+                                    var x = d.getElementsByTagName("script")[0];
+                                    x.parentNode.insertBefore(s, x);
+                              }
+                              if (w.attachEvent) {
+                                    w.attachEvent("onload", l);
+                              } else {
+                                    w.addEventListener("load", l, false);
+                              }
+                        }
+                  })();
+            </script>
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+            <script>
+                  $(function() {
+                        swal("Error!", "Incorrect email or password", "error");
+                  });
+            </script>
+
+            <div
+                  class="notification center  pos-bottom col-md-3 col-lg-3 mb-5"
+                  data-animation="from-bottom"
+                  data-autohide="3000"
+            >
+                  <div class="boxed boxed--sm bg--success  box-shadow ">
+                        <div class="text-center">
+                              <h4 class="text-white">
+                                    <i class="fa fa-check"></i>
+                                    <span class="notification-msg"></span>
+                              </h4>
+                        </div>
+                  </div>
+            </div>
+            <div class="download-app-msg  h-100">
+                  <div class="container d-flex  h-100">
+                        <div
+                              class="row justify-content-center align-self-center   center"
+                        >
+                              <div class="login-content">
+                                    <a href="http://reitium.com">
+                                          <img
+                                                alt=""
+                                                src="/img/simple-logo.png"
+                                                class="login-logo"
+                                    /></a>
+
+                                    <h1>
+                                          <span class="reitium-font"
+                                                >Reitium</span
+                                          >
+                                    </h1>
+                                    <p class="phrase">
+                                          Real Estate for Everyone<sup>™</sup>
+                                    </p>
+                                    <p>
+                                          Download
+                                          <span class="reitium-font"
+                                                >REITIUM</span
+                                          >
+                                          app
+                                    </p>
+
+                                    <div class="  d-flex ">
+                                          <div
+                                                class="row justify-content-center center"
+                                          >
+                                                <a
+                                                      href="https://play.google.com/store/apps/details?id=com.reitium.demotwo&amp;hl=en"
+                                                >
+                                                      <img
+                                                            class="store-icons"
+                                                            id="android"
+                                                            src="/img/icon/Google-play.png"
+                                                            alt=""
+                                                            style="display: none;"
+                                                      />
+                                                </a>
+                                                <a
+                                                      href="https://apps.apple.com/us/app/reitium/id1455208182"
+                                                >
+                                                      <img
+                                                            class="store-icons"
+                                                            id="ios"
+                                                            src="/img/icon/app-Store.png"
+                                                            alt=""
+                                                      />
+                                                </a>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+
+            <script>
+                  $(function() {
+                        myFunction();
+                  });
+
+                  function myFunction() {
+                        var x =
+                              "User-agent header sent: " + navigator.userAgent;
+                        var android = x.includes("Android");
+                        if (android) {
+                              $("#ios").hide();
+                        } else {
+                              $("#android").hide();
+                        }
+                  }
+            </script>
+
+            <div class="swal-overlay" tabindex="-1">
+                  <div class="swal-modal" role="dialog" aria-modal="true">
+                        <div class="swal-icon swal-icon--error">
+                              <div class="swal-icon--error__x-mark">
+                                    <span
+                                          class="swal-icon--error__line swal-icon--error__line--left"
+                                    ></span>
+                                    <span
+                                          class="swal-icon--error__line swal-icon--error__line--right"
+                                    ></span>
+                              </div>
+                        </div>
+                        <div class="swal-title" style="">Error!</div>
+                        <div class="swal-text" style="">
+                              Incorrect email or password
+                        </div>
+                        <div class="swal-footer">
+                              <div class="swal-button-container">
+                                    <button
+                                          class="swal-button swal-button--confirm"
+                                    >
+                                          OK
+                                    </button>
+
+                                    <div class="swal-button__loader">
+                                          <div></div>
+                                          <div></div>
+                                          <div></div>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+            <iframe
+                  id="intercom-frame"
+                  style="position: absolute !important; opacity: 0 !important; width: 1px !important; height: 1px !important; top: 0 !important; left: 0 !important; border: none !important; display: block !important; z-index: -1 !important; pointer-events: none;"
+                  aria-hidden="true"
+                  tabindex="-1"
+                  title="Intercom"
+            ></iframe>
+            <div class="intercom-lightweight-app" aria-live="polite">
+                  <style id="intercom-lightweight-app-style" type="text/css">
+                        @keyframes intercom-lightweight-app-launcher {
+                              from {
+                                    opacity: 0;
+                                    transform: scale(0.5);
+                              }
+                              to {
+                                    opacity: 1;
+                                    transform: scale(1);
+                              }
+                        }
+
+                        @keyframes intercom-lightweight-app-gradient {
+                              from {
+                                    opacity: 0;
+                              }
+                              to {
+                                    opacity: 1;
+                              }
+                        }
+
+                        @keyframes intercom-lightweight-app-messenger {
+                              from {
+                                    opacity: 0;
+                                    transform: translateY(20px);
+                              }
+                              to {
+                                    opacity: 1;
+                                    transform: translateY(0);
+                              }
+                        }
+
+                        .intercom-lightweight-app {
+                              position: fixed;
+                              z-index: 2147483001;
+                              width: 0;
+                              height: 0;
+                              font-family: intercom-font, "Helvetica Neue",
+                                    "Apple Color Emoji", Helvetica, Arial,
+                                    sans-serif;
+                        }
+
+                        .intercom-lightweight-app-gradient {
+                              position: fixed;
+                              z-index: 2147483002;
+                              width: 500px;
+                              height: 500px;
+                              bottom: 0;
+                              right: 0;
+                              pointer-events: none;
+                              background: radial-gradient(
+                                    ellipse at bottom right,
+                                    rgba(29, 39, 54, 0.16) 0%,
+                                    rgba(29, 39, 54, 0) 72%
+                              );
+                              animation: intercom-lightweight-app-gradient 200ms
+                                    ease-out;
+                        }
+
+                        .intercom-lightweight-app-launcher {
+                              position: fixed;
+                              z-index: 2147483003;
+                              bottom: 20px;
+                              right: 20px;
+                              width: 60px;
+                              height: 60px;
+                              border-radius: 50%;
+                              background: #0071b2;
+                              cursor: pointer;
+                              box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.06),
+                                    0 2px 32px 0 rgba(0, 0, 0, 0.16);
+                              animation: intercom-lightweight-app-launcher 250ms
+                                    ease;
+                        }
+
+                        .intercom-lightweight-app-launcher:focus {
+                              outline: none;
+                        }
+
+                        .intercom-lightweight-app-launcher-icon {
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                              position: absolute;
+                              top: 0;
+                              left: 0;
+                              width: 60px;
+                              height: 60px;
+                              transition: transform 100ms linear,
+                                    opacity 80ms linear;
+                        }
+
+                        .intercom-lightweight-app-launcher-icon-open {
+                              opacity: 1;
+                              transform: rotate(0deg) scale(1);
+                        }
+
+                        .intercom-lightweight-app-launcher-icon-open svg {
+                              width: 28px;
+                              height: 32px;
+                        }
+
+                        .intercom-lightweight-app-launcher-icon-open svg path {
+                              fill: rgb(255, 255, 255);
+                        }
+
+                        .intercom-lightweight-app-launcher-icon-self-serve {
+                              opacity: 1;
+                              transform: rotate(0deg) scale(1);
+                        }
+
+                        .intercom-lightweight-app-launcher-icon-self-serve svg {
+                              height: 56px;
+                        }
+
+                        .intercom-lightweight-app-launcher-icon-self-serve
+                              svg
+                              path {
+                              fill: rgb(255, 255, 255);
+                        }
+
+                        .intercom-lightweight-app-launcher-custom-icon-open {
+                              max-height: 36px;
+                              max-width: 36px;
+
+                              opacity: 1;
+                              transform: rotate(0deg) scale(1);
+                        }
+
+                        .intercom-lightweight-app-launcher-icon-minimize {
+                              opacity: 0;
+                              transform: rotate(-60deg) scale(0);
+                        }
+
+                        .intercom-lightweight-app-launcher-icon-minimize svg {
+                              width: 16px;
+                        }
+
+                        .intercom-lightweight-app-launcher-icon-minimize
+                              svg
+                              path {
+                              fill: rgb(255, 255, 255);
+                        }
+
+                        .intercom-lightweight-app-messenger {
+                              position: fixed;
+                              z-index: 2147483003;
+                              overflow: hidden;
+                              background-color: white;
+                              animation: intercom-lightweight-app-messenger
+                                    250ms ease-out;
+
+                              width: 376px;
+                              height: calc(100% - 40px);
+                              max-height: 704px;
+                              min-height: 250px;
+                              right: 20px;
+                              bottom: 20px;
+                              box-shadow: 0 5px 40px rgba(0, 0, 0, 0.16);
+                              border-radius: 8px;
+                        }
+
+                        .intercom-lightweight-app-messenger-header {
+                              height: 75px;
+                              background: linear-gradient(
+                                    135deg,
+                                    rgb(0, 113, 178) 0%,
+                                    rgb(0, 48, 76) 100%
+                              );
+                        }
+
+                        @media print {
+                              .intercom-lightweight-app {
+                                    display: none;
+                              }
+                        }
+                  </style>
+            </div>
+      </body>
+      <loom-container id="lo-engage-ext-container"
+            ><div></div>
+            <loom-shadow classname="resolved"></loom-shadow
+      ></loom-container>
+</html>

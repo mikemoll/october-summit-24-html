@@ -1,0 +1,2756 @@
+<html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149595048-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-149595048-1');
+    </script>
+    <script>
+        window['_fs_debug'] = false;
+        window['_fs_host'] = 'fullstory.com';
+        window['_fs_org'] = 'PEPEW';
+        window['_fs_namespace'] = 'FS';
+        (function (m, n, e, t, l, o, g, y) {
+            if (e in m) {
+                if (m.console && m.console.log) {
+                    m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].');
+                }
+                return;
+            }
+            g = m[e] = function (a, b, s) {
+                g.q ? g.q.push([a, b, s]) : g._api(a, b, s);
+            };
+            g.q = [];
+            o = n.createElement(t);
+            o.async = 1;
+            o.crossOrigin = 'anonymous';
+            o.src = 'https://' + _fs_host + '/s/fs.js';
+            y = n.getElementsByTagName(t)[0];
+            y.parentNode.insertBefore(o, y);
+            g.identify = function (i, v, s) {
+                g(l, {
+                    uid: i
+                }, s);
+                if (v) g(l, v, s)
+            };
+            g.setUserVars = function (v, s) {
+                g(l, v, s)
+            };
+            g.event = function (i, v, s) {
+                g('event', {
+                    n: i,
+                    p: v
+                }, s)
+            };
+            g.shutdown = function () {
+                g("rec", !1)
+            };
+            g.restart = function () {
+                g("rec", !0)
+            };
+            g.log = function (a, b) {
+                g("log", [a, b])
+            };
+            g.consent = function (a) {
+                g("consent", !arguments.length || a)
+            };
+            g.identifyAccount = function (i, v) {
+                o = 'account';
+                v = v || {};
+                v.acctId = i;
+                g(o, v)
+            };
+            g.clearUserCookie = function () { };
+        })(window, document, window['_fs_namespace'], 'script', 'user');
+    </script>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <style type="text/css">
+        .swal-icon--error {
+            border-color: #f27474;
+            -webkit-animation: animateErrorIcon .5s;
+            animation: animateErrorIcon .5s
+        }
+
+        .swal-icon--error__x-mark {
+            position: relative;
+            display: block;
+            -webkit-animation: animateXMark .5s;
+            animation: animateXMark .5s
+        }
+
+        .swal-icon--error__line {
+            position: absolute;
+            height: 5px;
+            width: 47px;
+            background-color: #f27474;
+            display: block;
+            top: 37px;
+            border-radius: 2px
+        }
+
+        .swal-icon--error__line--left {
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            left: 17px
+        }
+
+        .swal-icon--error__line--right {
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            right: 16px
+        }
+
+        @-webkit-keyframes animateErrorIcon {
+            0% {
+                -webkit-transform: rotateX(100deg);
+                transform: rotateX(100deg);
+                opacity: 0
+            }
+
+            to {
+                -webkit-transform: rotateX(0deg);
+                transform: rotateX(0deg);
+                opacity: 1
+            }
+        }
+
+        @keyframes animateErrorIcon {
+            0% {
+                -webkit-transform: rotateX(100deg);
+                transform: rotateX(100deg);
+                opacity: 0
+            }
+
+            to {
+                -webkit-transform: rotateX(0deg);
+                transform: rotateX(0deg);
+                opacity: 1
+            }
+        }
+
+        @-webkit-keyframes animateXMark {
+            0% {
+                -webkit-transform: scale(.4);
+                transform: scale(.4);
+                margin-top: 26px;
+                opacity: 0
+            }
+
+            50% {
+                -webkit-transform: scale(.4);
+                transform: scale(.4);
+                margin-top: 26px;
+                opacity: 0
+            }
+
+            80% {
+                -webkit-transform: scale(1.15);
+                transform: scale(1.15);
+                margin-top: -6px
+            }
+
+            to {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                margin-top: 0;
+                opacity: 1
+            }
+        }
+
+        @keyframes animateXMark {
+            0% {
+                -webkit-transform: scale(.4);
+                transform: scale(.4);
+                margin-top: 26px;
+                opacity: 0
+            }
+
+            50% {
+                -webkit-transform: scale(.4);
+                transform: scale(.4);
+                margin-top: 26px;
+                opacity: 0
+            }
+
+            80% {
+                -webkit-transform: scale(1.15);
+                transform: scale(1.15);
+                margin-top: -6px
+            }
+
+            to {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                margin-top: 0;
+                opacity: 1
+            }
+        }
+
+        .swal-icon--warning {
+            border-color: #f8bb86;
+            -webkit-animation: pulseWarning .75s infinite alternate;
+            animation: pulseWarning .75s infinite alternate
+        }
+
+        .swal-icon--warning__body {
+            width: 5px;
+            height: 47px;
+            top: 10px;
+            border-radius: 2px;
+            margin-left: -2px
+        }
+
+        .swal-icon--warning__body,
+        .swal-icon--warning__dot {
+            position: absolute;
+            left: 50%;
+            background-color: #f8bb86
+        }
+
+        .swal-icon--warning__dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            margin-left: -4px;
+            bottom: -11px
+        }
+
+        @-webkit-keyframes pulseWarning {
+            0% {
+                border-color: #f8d486
+            }
+
+            to {
+                border-color: #f8bb86
+            }
+        }
+
+        @keyframes pulseWarning {
+            0% {
+                border-color: #f8d486
+            }
+
+            to {
+                border-color: #f8bb86
+            }
+        }
+
+        .swal-icon--success {
+            border-color: #a5dc86
+        }
+
+        .swal-icon--success:after,
+        .swal-icon--success:before {
+            content: "";
+            border-radius: 50%;
+            position: absolute;
+            width: 60px;
+            height: 120px;
+            background: #fff;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg)
+        }
+
+        .swal-icon--success:before {
+            border-radius: 120px 0 0 120px;
+            top: -7px;
+            left: -33px;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            -webkit-transform-origin: 60px 60px;
+            transform-origin: 60px 60px
+        }
+
+        .swal-icon--success:after {
+            border-radius: 0 120px 120px 0;
+            top: -11px;
+            left: 30px;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            -webkit-transform-origin: 0 60px;
+            transform-origin: 0 60px;
+            -webkit-animation: rotatePlaceholder 4.25s ease-in;
+            animation: rotatePlaceholder 4.25s ease-in
+        }
+
+        .swal-icon--success__ring {
+            width: 80px;
+            height: 80px;
+            border: 4px solid hsla(98, 55%, 69%, .2);
+            border-radius: 50%;
+            box-sizing: content-box;
+            position: absolute;
+            left: -4px;
+            top: -4px;
+            z-index: 2
+        }
+
+        .swal-icon--success__hide-corners {
+            width: 5px;
+            height: 90px;
+            background-color: #fff;
+            padding: 1px;
+            position: absolute;
+            left: 28px;
+            top: 8px;
+            z-index: 1;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg)
+        }
+
+        .swal-icon--success__line {
+            height: 5px;
+            background-color: #a5dc86;
+            display: block;
+            border-radius: 2px;
+            position: absolute;
+            z-index: 2
+        }
+
+        .swal-icon--success__line--tip {
+            width: 25px;
+            left: 14px;
+            top: 46px;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            -webkit-animation: animateSuccessTip .75s;
+            animation: animateSuccessTip .75s
+        }
+
+        .swal-icon--success__line--long {
+            width: 47px;
+            right: 8px;
+            top: 38px;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            -webkit-animation: animateSuccessLong .75s;
+            animation: animateSuccessLong .75s
+        }
+
+        @-webkit-keyframes rotatePlaceholder {
+            0% {
+                -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg)
+            }
+
+            5% {
+                -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg)
+            }
+
+            12% {
+                -webkit-transform: rotate(-405deg);
+                transform: rotate(-405deg)
+            }
+
+            to {
+                -webkit-transform: rotate(-405deg);
+                transform: rotate(-405deg)
+            }
+        }
+
+        @keyframes rotatePlaceholder {
+            0% {
+                -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg)
+            }
+
+            5% {
+                -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg)
+            }
+
+            12% {
+                -webkit-transform: rotate(-405deg);
+                transform: rotate(-405deg)
+            }
+
+            to {
+                -webkit-transform: rotate(-405deg);
+                transform: rotate(-405deg)
+            }
+        }
+
+        @-webkit-keyframes animateSuccessTip {
+            0% {
+                width: 0;
+                left: 1px;
+                top: 19px
+            }
+
+            54% {
+                width: 0;
+                left: 1px;
+                top: 19px
+            }
+
+            70% {
+                width: 50px;
+                left: -8px;
+                top: 37px
+            }
+
+            84% {
+                width: 17px;
+                left: 21px;
+                top: 48px
+            }
+
+            to {
+                width: 25px;
+                left: 14px;
+                top: 45px
+            }
+        }
+
+        @keyframes animateSuccessTip {
+            0% {
+                width: 0;
+                left: 1px;
+                top: 19px
+            }
+
+            54% {
+                width: 0;
+                left: 1px;
+                top: 19px
+            }
+
+            70% {
+                width: 50px;
+                left: -8px;
+                top: 37px
+            }
+
+            84% {
+                width: 17px;
+                left: 21px;
+                top: 48px
+            }
+
+            to {
+                width: 25px;
+                left: 14px;
+                top: 45px
+            }
+        }
+
+        @-webkit-keyframes animateSuccessLong {
+            0% {
+                width: 0;
+                right: 46px;
+                top: 54px
+            }
+
+            65% {
+                width: 0;
+                right: 46px;
+                top: 54px
+            }
+
+            84% {
+                width: 55px;
+                right: 0;
+                top: 35px
+            }
+
+            to {
+                width: 47px;
+                right: 8px;
+                top: 38px
+            }
+        }
+
+        @keyframes animateSuccessLong {
+            0% {
+                width: 0;
+                right: 46px;
+                top: 54px
+            }
+
+            65% {
+                width: 0;
+                right: 46px;
+                top: 54px
+            }
+
+            84% {
+                width: 55px;
+                right: 0;
+                top: 35px
+            }
+
+            to {
+                width: 47px;
+                right: 8px;
+                top: 38px
+            }
+        }
+
+        .swal-icon--info {
+            border-color: #c9dae1
+        }
+
+        .swal-icon--info:before {
+            width: 5px;
+            height: 29px;
+            bottom: 17px;
+            border-radius: 2px;
+            margin-left: -2px
+        }
+
+        .swal-icon--info:after,
+        .swal-icon--info:before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            background-color: #c9dae1
+        }
+
+        .swal-icon--info:after {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            margin-left: -3px;
+            top: 19px
+        }
+
+        .swal-icon {
+            width: 80px;
+            height: 80px;
+            border-width: 4px;
+            border-style: solid;
+            border-radius: 50%;
+            padding: 0;
+            position: relative;
+            box-sizing: content-box;
+            margin: 20px auto
+        }
+
+        .swal-icon:first-child {
+            margin-top: 32px
+        }
+
+        .swal-icon--custom {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            border: none;
+            border-radius: 0
+        }
+
+        .swal-icon img {
+            max-width: 100%;
+            max-height: 100%
+        }
+
+        .swal-title {
+            color: rgba(0, 0, 0, .65);
+            font-weight: 600;
+            text-transform: none;
+            position: relative;
+            display: block;
+            padding: 13px 16px;
+            font-size: 27px;
+            line-height: normal;
+            text-align: center;
+            margin-bottom: 0
+        }
+
+        .swal-title:first-child {
+            margin-top: 26px
+        }
+
+        .swal-title:not(:first-child) {
+            padding-bottom: 0
+        }
+
+        .swal-title:not(:last-child) {
+            margin-bottom: 13px
+        }
+
+        .swal-text {
+            font-size: 16px;
+            position: relative;
+            float: none;
+            line-height: normal;
+            vertical-align: top;
+            text-align: left;
+            display: inline-block;
+            margin: 0;
+            padding: 0 10px;
+            font-weight: 400;
+            color: rgba(0, 0, 0, .64);
+            max-width: calc(100% - 20px);
+            overflow-wrap: break-word;
+            box-sizing: border-box
+        }
+
+        .swal-text:first-child {
+            margin-top: 45px
+        }
+
+        .swal-text:last-child {
+            margin-bottom: 45px
+        }
+
+        .swal-footer {
+            text-align: right;
+            padding-top: 13px;
+            margin-top: 13px;
+            padding: 13px 16px;
+            border-radius: inherit;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0
+        }
+
+        .swal-button-container {
+            margin: 5px;
+            display: inline-block;
+            position: relative
+        }
+
+        .swal-button {
+            background-color: #7cd1f9;
+            color: #fff;
+            border: none;
+            box-shadow: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 10px 24px;
+            margin: 0;
+            cursor: pointer
+        }
+
+        .swal-button:not([disabled]):hover {
+            background-color: #78cbf2
+        }
+
+        .swal-button:active {
+            background-color: #70bce0
+        }
+
+        .swal-button:focus {
+            outline: none;
+            box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgba(43, 114, 165, .29)
+        }
+
+        .swal-button[disabled] {
+            opacity: .5;
+            cursor: default
+        }
+
+        .swal-button::-moz-focus-inner {
+            border: 0
+        }
+
+        .swal-button--cancel {
+            color: #555;
+            background-color: #efefef
+        }
+
+        .swal-button--cancel:not([disabled]):hover {
+            background-color: #e8e8e8
+        }
+
+        .swal-button--cancel:active {
+            background-color: #d7d7d7
+        }
+
+        .swal-button--cancel:focus {
+            box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgba(116, 136, 150, .29)
+        }
+
+        .swal-button--danger {
+            background-color: #e64942
+        }
+
+        .swal-button--danger:not([disabled]):hover {
+            background-color: #df4740
+        }
+
+        .swal-button--danger:active {
+            background-color: #cf423b
+        }
+
+        .swal-button--danger:focus {
+            box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgba(165, 43, 43, .29)
+        }
+
+        .swal-content {
+            padding: 0 20px;
+            margin-top: 20px;
+            font-size: medium
+        }
+
+        .swal-content:last-child {
+            margin-bottom: 20px
+        }
+
+        .swal-content__input,
+        .swal-content__textarea {
+            -webkit-appearance: none;
+            background-color: #fff;
+            border: none;
+            font-size: 14px;
+            display: block;
+            box-sizing: border-box;
+            width: 100%;
+            border: 1px solid rgba(96, 96, 96, 0.14);
+            padding: 10px 13px;
+            border-radius: 2px;
+            transition: border-color .2s
+        }
+
+        .swal-content__input:focus,
+        .swal-content__textarea:focus {
+            outline: none;
+            border-color: #6db8ff
+        }
+
+        .swal-content__textarea {
+            resize: vertical
+        }
+
+        .swal-button--loading {
+            color: transparent
+        }
+
+        .swal-button--loading~.swal-button__loader {
+            opacity: 1
+        }
+
+        .swal-button__loader {
+            position: absolute;
+            height: auto;
+            width: 43px;
+            z-index: 2;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+            text-align: center;
+            pointer-events: none;
+            opacity: 0
+        }
+
+        .swal-button__loader div {
+            display: inline-block;
+            float: none;
+            vertical-align: baseline;
+            width: 9px;
+            height: 9px;
+            padding: 0;
+            border: none;
+            margin: 2px;
+            opacity: .4;
+            border-radius: 7px;
+            background-color: hsla(0, 0%, 100%, .9);
+            transition: background .2s;
+            -webkit-animation: swal-loading-anim 1s infinite;
+            animation: swal-loading-anim 1s infinite
+        }
+
+        .swal-button__loader div:nth-child(3n+2) {
+            -webkit-animation-delay: .15s;
+            animation-delay: .15s
+        }
+
+        .swal-button__loader div:nth-child(3n+3) {
+            -webkit-animation-delay: .3s;
+            animation-delay: .3s
+        }
+
+        @-webkit-keyframes swal-loading-anim {
+            0% {
+                opacity: .4
+            }
+
+            20% {
+                opacity: .4
+            }
+
+            50% {
+                opacity: 1
+            }
+
+            to {
+                opacity: .4
+            }
+        }
+
+        @keyframes swal-loading-anim {
+            0% {
+                opacity: .4
+            }
+
+            20% {
+                opacity: .4
+            }
+
+            50% {
+                opacity: 1
+            }
+
+            to {
+                opacity: .4
+            }
+        }
+
+        .swal-overlay {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 0;
+            overflow-y: auto;
+            background-color: rgba(0, 0, 0, .4);
+            z-index: 10000;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity .3s
+        }
+
+        .swal-overlay:before {
+            content: " ";
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%
+        }
+
+        .swal-overlay--show-modal {
+            opacity: 1;
+            pointer-events: auto
+        }
+
+        .swal-overlay--show-modal .swal-modal {
+            opacity: 1;
+            pointer-events: auto;
+            box-sizing: border-box;
+            -webkit-animation: showSweetAlert .3s;
+            animation: showSweetAlert .3s;
+            will-change: transform
+        }
+
+        .swal-modal {
+            width: 478px;
+            opacity: 0;
+            pointer-events: none;
+            background-color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            position: static;
+            margin: 20px auto;
+            display: inline-block;
+            vertical-align: middle;
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+            z-index: 10001;
+            transition: opacity .2s, -webkit-transform .3s;
+            transition: transform .3s, opacity .2s;
+            transition: transform .3s, opacity .2s, -webkit-transform .3s
+        }
+
+        @media (max-width:500px) {
+            .swal-modal {
+                width: calc(100% - 20px)
+            }
+        }
+
+        @-webkit-keyframes showSweetAlert {
+            0% {
+                -webkit-transform: scale(1);
+                transform: scale(1)
+            }
+
+            1% {
+                -webkit-transform: scale(.5);
+                transform: scale(.5)
+            }
+
+            45% {
+                -webkit-transform: scale(1.05);
+                transform: scale(1.05)
+            }
+
+            80% {
+                -webkit-transform: scale(.95);
+                transform: scale(.95)
+            }
+
+            to {
+                -webkit-transform: scale(1);
+                transform: scale(1)
+            }
+        }
+
+        @keyframes showSweetAlert {
+            0% {
+                -webkit-transform: scale(1);
+                transform: scale(1)
+            }
+
+            1% {
+                -webkit-transform: scale(.5);
+                transform: scale(.5)
+            }
+
+            45% {
+                -webkit-transform: scale(1.05);
+                transform: scale(1.05)
+            }
+
+            80% {
+                -webkit-transform: scale(.95);
+                transform: scale(.95)
+            }
+
+            to {
+                -webkit-transform: scale(1);
+                transform: scale(1)
+            }
+        }
+    </style>
+
+    <title> TRIVIEW CAPITAL | EXEMPT MARKET DEALER | </title>
+    <meta content="TriView Capital LTD is a Registered EMD across Western Canada and Ontario." name="description">
+    <meta content="Triview real estate investment" name="keywords">
+    <meta content="TRIVIEW CAPITAL" name="author">
+
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!--<link href="/css/coodo.css?version=1.0" rel="stylesheet">-->
+    <link href="/css/modal.css" rel="stylesheet">
+    <link href="/css/nprogress.css?version=1.0" rel="stylesheet">
+    <!-- <link href="/icon_fonts_assets/themefy/themify-icons.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="https://triviewapp.com/triview-favicon.png">
+    <script type="text/javascript" async="" src="https://widget.intercom.io/widget/lgdm8c2t"></script>
+    <script src="/js/plugins/nprogress.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+    <script src="/js/custom.js"></script>
+    <script src="/js/plugins/number_format.js"></script>
+    <script src="/js/getCountryName.js"></script>
+    <script src="/js/property.js"></script>
+    <script src="/js/lodash.min.js"></script>
+    <link href="/js/plugins/jquery.steps/jquery.steps.css" rel="stylesheet">
+
+    <link href="/css/cryptofont/cryptofont.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700%7CMerriweather:300,300i"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link href="/css/theme.css" rel="stylesheet">
+
+    <link href="/css/custom.css?version=1.0" rel="stylesheet">
+
+    <link href="/css/custom-triview.css?version=1.0" rel="stylesheet">
+
+
+
+    <script>
+        $(document).ready(function () {
+
+            var vHeight = $(window).height(),
+                cover = $(".full-height");
+            if (cover.length > 0) {
+                cover.each(function () {
+                    $(this).css('height', vHeight + 'px');
+                })
+            }
+
+        })
+    </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body>
+
+
+    <a id="start"></a>
+
+    <header class="">
+        <div class="modal-container" data-autoshow="500">
+            <div class="row">
+                <div class="modal-content col-8">
+                    <div class="boxed boxed--lg">
+                        <h2> DISCLAIMER</h2>
+                        <hr class="short">
+                        <p class="lead scroll">
+                            DISCLAIMER
+
+                            Risks specific to this product include (as per section 8 of the Offering Memorandum): 
+                            Investing directly into operating businesses which are exposed to typical business risk. 
+                            Trust owns real property which can be affected by mortgage interest rates, supply demand conditions and general economic conditions.
+                             Exposure to secondary and suburban markets which have less liquidity than primary markets. Business competition. Geographic concentration. 
+                             Low cap rate environment may change. No securities regulatory authority has reviewed this Offering. Liquidity of Units may not be possible. 
+                             There is no assurance that the maximum or minimum offering will achieved. There is no assurance that the Trust will distribute cash in a given year. 
+                            Distributions may be reduced or suspended. Limited track record of Issuer. Tax implications of the investment.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-container">
+            <div>
+                <div class="bar bar--sm visible-xs">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-3 col-md-2">
+                                <a href="index.html"> <img class="logo logo-dark" alt="logo" src="img/tvirrlogo.png"
+                                        height="190%;"> <img class="logo logo-light" alt="logo" src="img/tvirrlogo.png">
+                                </a>
+                            </div>
+                            <div class="col-9 col-md-10 text-right">
+                                <a href="#" class="hamburger-toggle" data-toggle-class="#menu1;hidden-xs hidden-sm"> <i
+                                        class="icon icon--sm stack-interface stack-menu"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <nav id="menu1" class="bar bar-1 hidden-xs">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-1 col-md-2 hidden-xs">
+                                <div class="bar__module">
+                                    <a href="index.html"> <img class="logo logo-dark" alt="logo" src="img/tvirrlogo.png"
+                                            max-width:80px;> <img class="logo logo-light" alt="logo"
+                                            src="img/tvirrlogo.png"> </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-11 col-md-12 text-right text-left-xs text-left-sm">
+                                <div class="bar__module">
+
+                                </div>
+                                <div class="bar__module">
+                                    <!-- <a class="btn btn--sm type--uppercase" href="#customise-template"> <span class="btn__text">
+                                                    All Deals
+                                        </span> </a> -->
+                                    <a class="btn btn--sm btn--secondary type--uppercase" href="/deals-cards.html">
+                                        <span class="btn__text">
+                                            <Strong> Back to All Deals</Strong>
+                                        </span> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+    <script src="/js/plugins/light.youtube.embeds/light.youtube.embeds.js"></script>
+    <link href="/css/donut-chart.css" rel="stylesheet">
+    <link href="/css/socicon.css" rel="stylesheet">
+    <link href="/css/property-details.css?version=1.0" rel="stylesheet">
+    <style>
+        /*    .jumbotron {
+            position: relative;
+            background-color: transparent !important;
+            background: rgba(0, 0, 255, 0.3) !important;  Green background with 30% opacity
+        }
+        .jumbotron .img {
+            position: absolute;
+            left:0; top:0;
+            background-size: cover;
+            width: 100%;
+            opacity: 0.45;
+            background-image: url("http://i.imgur.com/eFMDsVA.jpg");
+            z-index: -1;
+            height: 100%;
+        }*/
+        .modal-lg {
+            max-width: 900px;
+        }
+    </style>
+    <!-- <section class="jumbotron bg-reitium jumbotron-property-bg  ">
+  <h1></h1>
+</section> -->
+    <main role="main" class="container bg-white rounded box-shadow">
+            <div class="row justify-content-around">
+                    <div class="col-lg-7 col-md-6  col-sm-12 switchable__text">
+                            <div class="col-md-12 col-12">
+                
+                                    <div class="video-cover border--round box-shadow-wide" style="">
+                                            <div class="background-image-holder" style="background: url(&quot;img/nationwide.jpg&quot;); opacity: 1;"> <img alt="image" src="img/nationwide.jpg"> </div>
+                                            <div class="video-play-icon"></div> <iframe width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" data-src="https://www.youtube.com/embed/-1kgpqW1kMs"></iframe>
+                                            
+                                        </div>
+                            </div>
+                       
+                            <div class="card-body d-flex justify-content-between flex-column">
+                                <div>
+                                      <div class="d-flex flex-row justify-content-between">
+                                            <div class="deal-property-type">
+                                                  Commercial
+                                                  Real Estate
+                                                  Development
+                                            </div>
+                                            <div class="deal-closing-date">
+                                                  Monthly
+                                                  Closing
+                                            </div>
+                                      </div>
+                                      <div class="card-title mb-1 ">
+                                            <a class="" href=" #">NationWide
+                                                  IV</a>
+                                      </div>
+                                      <div class="card-text-location mb-3 text-truncate">
+                                            Nationwide Self
+                                            Storage &amp; Auto Wash
+                                            Trust
+                                      </div>
+                                      <div class="d-flex flex-row  justify-content">
+                                        <div class="badge bg-reitium">
+                                              INCOME
+                                        </div>
+                                        <div class="" style="padding-right: 2.5em;">
+                                
+                                            </div>
+                                        <div class="badge bg-reitium">
+                                              GROWTH
+                                        </div>
+                                        <div class="" style="padding-right: 2.5em;">
+                                
+                                            </div>
+                                        <div class="badge bg-gold">
+                                              RRSP/TFSA
+                                        </div>
+                                  </div>
+                                </div>
+                                <br>
+                                <div class="deal-details">
+                                      <div class="d-flex flex-row justify-content-between border-bottom">
+                                            <div class="">
+                                                  Target
+                                                  Investor Net
+                                                  IRR
+                                            </div>
+                                            <div class="">
+                                                  7% Pref + 70%
+                                                  of Profit
+                                                  Share
+                                            </div>
+                                      </div>
+                                      <div class="d-flex flex-row justify-content-between border-bottom">
+                                            <div class="">
+                                                  Total Fund
+                                                  Size
+                                            </div>
+                                            <div class="">
+                                                  $26,000,000
+                                            </div>
+                                      </div>
+                                      <div class="d-flex flex-row justify-content-between border-bottom">
+                                            <div class="">
+                                                  Target
+                                                  Investment
+                                                  Period
+                                            </div>
+                                            <div class="">
+                                                  5+ Years
+                                            </div>
+                                      </div>
+                                      <div class="d-flex flex-row justify-content-between ">
+                                            <div class="">
+                                                  Minimum
+                                                  Investment
+                                            </div>
+                                            <div class="">
+                                                  $10,000
+                                            </div>
+                                      </div>
+                                </div>
+                          </div>
+                  
+                    </div>
+
+                    <div class="col-lg-5 col-md-6 col-sm-12 ">
+                        <div class="boxed boxed--lg boxed--border box-shadow">
+                            <h2 class="mb-0">
+                                <span class=""><strong>NationWide IV</strong></span>
+                                </h2><h3>Self Storage &amp; Auto Wash Trust</h3>
+                            <br>
+                            <div class="d-flex flex-row  justify-content">
+                                <div class="badge bg-reitium">
+                                    INCOME
+                                </div>
+                                <div class="" style="padding-right: 2.5em;">
+
+                                </div>
+                                <div class="badge bg-reitium">
+                                    GROWTH
+                                </div>
+                                <div class="" style="padding-right: 2.5em;">
+
+                                </div>
+                                <div class="badge bg-gold">
+                                    RRSP/TFSA
+                                </div>
+                            </div>
+                            <br>
+                            <div>
+                                <h4>Unique real estate investment with objectives structured to provide monthly income
+                                    and long-term investment growth to investors.</h4>
+                            </div>
+                            <br>
+                            <div class="boxed boxed--border box-shadow ">
+                                <h3 class="text-center">
+                                   <strong>  I'M INTERESTED </strong>
+                                </h3><br>
+                                <!--<a class="btn btn-invest" href="#theLinkIsSetViaJS"><i class="fa fa-money-check-alt"></i> Invest</a> -->
+                                <a class="btn btn-sm btn-invest btn--primary mb-0 block " href="https://calendly.com/austincarroll/nationwide">
+                                    <span class="btn__text">
+                                        <span class="btn-invest-text"><i class="far fa-calendar-alt"></i> Book  1 on  1 Call<br><span class="invest-min">
+                                            </span></span>
+                                    </span>
+                                </a>
+                                <a class="btn btn-invest btn-sm btn--primary mb-0 block" href="https://calendly.com/austincarroll/nationwide">
+                                    <span class="btn__text">
+                                        <span class="btn-invest-text"><i class="fas fa-money-check-alt"></i> Invest Now<br><span class="invest-min">
+                                            </span></span>
+                                    </span>
+                                </a>
+
+                                </div>
+
+
+
+
+
+                        </div>
+
+                    </div>
+
+                   
+                    </div>
+                </div>
+      
+
+        <strong class="center"><strong>
+
+
+                <div class="row">
+
+
+                    <div class="col-md-12 p-5 text-center ">
+
+                        <div class="tabs-container pt-1" data-content-align="left" id="tabs">
+                            <div class="fix-top-on-scroll">
+
+                                <select class="custom-select " id="select">
+                                    <option value="0"> Overview </option>
+                                    <option value="1"> Documents + videos </option>
+                                    <option value="2"> Issuer </option>
+                                    <!-- <option value="3"> Updates </option> -->
+                                    <option value="4"> Disclaimer </option>
+                                    <option value="5"> Q&amp;A</option>
+                                </select>
+                                <ul class="tabs ">
+                                    <li class="active">
+                                        <div class="tab__title ">
+                                            <a href="#tabs" class="h5"><i class="far fa-file-powerpoint"></i> Overview
+                                            </a>
+                                        </div>
+
+                                    </li>
+                                    <li>
+                                        <div class="tab__title">
+                                            <a href="#tabs" class="h5"><i class="far fa-file-pdf"></i> Documents +
+                                                Videos </a>
+                                        </div>
+
+                                    </li>
+                                    <li>
+                                        <div class="tab__title">
+                                            <a href="#tabs" class="h5"><i class="fas fa-user-alt"></i> Issuer</a>
+                                        </div>
+
+                                    </li>
+
+
+                                    <!-- <li>
+                                        <div class="tab__title">
+                                            <a href="#tabs" class="h5"><i class="far fa-clock"></i> Updates </a>
+                                        </div>
+
+                                    </li> -->
+                                    <li>
+                                        <div class="tab__title">
+                                            <a href="#tabs" class="h5"><i class="fas fa-exclamation-circle"></i>
+                                                Disclaimer</a>
+                                        </div>
+
+                                    </li>
+                                    <li>
+                                        <div class="tab__title">
+                                            <a href="#tabs" class="h5"><i class="far fa-question-circle"></i>
+                                                Q&amp;A</a>
+                                        </div>
+
+                                    </li>
+                                    <!-- <li class="tab-invest fade" style="display: none;">
+                                                <div class="tab__title">
+                                                    <a class="btn btn-sm type--uppercase bg-reitium " href="http://triviewapp.com/ref/invest/5e1dacbe062c6b2e113b0d1b/5d9cc7c891913971a48bbf6a">
+                                                        <span class="btn__text">
+                                                            <span class="btn-invest-text">Invest </span>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </li> -->
+
+                                </ul>
+                                <ul class="tabs-content"></ul>
+                            </div>
+
+                            <ul class="tabs-content">
+                                <!-- ======================================================================= -->
+                                <!-- ================= NEW TAB ============================================= -->
+                                <!-- ======================================================================= -->
+                                <li class="active">
+                                    <div class="tab__content">
+
+
+
+                                        <!-- Investment Overview -->
+                                        <section class="text">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="card-body d-flex justify-content-between flex-column">
+                                                        <div>
+                                                              <div class="d-flex flex-row justify-content-between">
+                                                                    <div class="deal-property-type">
+                                                                          Commercial
+                                                                          Real Estate
+                                                                          Development
+                                                                    </div>
+                                                                    <div class="deal-closing-date">
+                                                                          Monthly
+                                                                          Closing
+                                                                    </div>
+                                                              </div>
+                                                              <div class="card-title mb-1 ">
+                                                                    <a class="" href=" #">NationWide
+                                                                          IV</a>
+                                                              </div>
+                                                              <div class="card-text-location mb-3 text-truncate">
+                                                                    Nationwide Self
+                                                                    Storage &amp; Auto Wash
+                                                                    Trust
+                                                              </div>
+                                                              <div class="d-flex flex-row  justify-content">
+                                                                <div class="badge bg-reitium">
+                                                                      INCOME
+                                                                </div>
+                                                                <div class="" style="padding-right: 2.5em;">
+                                                        
+                                                                    </div>
+                                                                <div class="badge bg-reitium">
+                                                                      GROWTH
+                                                                </div>
+                                                                <div class="" style="padding-right: 2.5em;">
+                                                        
+                                                                    </div>
+                                                                <div class="badge bg-gold">
+                                                                      RRSP/TFSA
+                                                                </div>
+                                                          </div>
+                                                        </div>
+                                                        <div class="deal-details">
+                                                              <div class="d-flex flex-row justify-content-between border-bottom">
+                                                                    <div class="">
+                                                                          Target
+                                                                          Investor Net
+                                                                          IRR
+                                                                    </div>
+                                                                    <div class="">
+                                                                          7% Pref + 70%
+                                                                          of Profit
+                                                                          Share
+                                                                    </div>
+                                                              </div>
+                                                              <div class="d-flex flex-row justify-content-between border-bottom">
+                                                                    <div class="">
+                                                                          Total Fund
+                                                                          Size
+                                                                    </div>
+                                                                    <div class="">
+                                                                          $26,000,000
+                                                                    </div>
+                                                              </div>
+                                                              <div class="d-flex flex-row justify-content-between border-bottom">
+                                                                    <div class="">
+                                                                          Target
+                                                                          Investment
+                                                                          Period
+                                                                    </div>
+                                                                    <div class="">
+                                                                          5+ Years
+                                                                    </div>
+                                                              </div>
+                                                              <div class="d-flex flex-row justify-content-between ">
+                                                                    <div class="">
+                                                                          Minimum
+                                                                          Investment
+                                                                    </div>
+                                                                    <div class="">
+                                                                          $10,000
+                                                                    </div>
+                                                              </div>
+                                                        </div>
+                                                  </div>
+
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section class="switchable">
+                                            <div class="container">
+                                                <div class="row justify-content-between">
+
+
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section class="text-center">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-md-8 col-lg-6">
+                                                        <h2>NationWide IV - Video Presentation</h2>
+                                                        <div class="video-cover border--round">
+                                                            <div class="background-image-holder"> <img alt="image"
+                                                                    src="img/nationwide.jpg"> </div>
+                                                            <div class="video-play-icon"></div> <iframe
+                                                                data-src="https://www.youtube.com/embed/qIG7Zob6Yn0?autoplay=1"
+                                                                allowfullscreen="allowfullscreen"></iframe>
+                                                        </div> <span>Presented by NationWide IV&nbsp;Self Storage &amp;
+                                                            Auto Wash Trust<br></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+
+                                        <section class="text">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-md-12 col-lg-10">
+
+                                                        <div class="card-title mb-1 border-bottom">
+                                                            <h3 class=""><strong> Investment Overview</strong> </h3>
+                                                        </div> <br>
+
+                                                        <p class="lead"> The demand for self storage lockers has never
+                                                            been greater. Baby boomers are retiring, generation x and y
+                                                            are moving into micro-sized apartments, governments,
+                                                            municipalities and small businesses are all either growing
+                                                            or downsizing. This demand goes beyond just trends.
+                                                        </p>
+                                                        <p class="lead">NationWide Self Storage provides a unique
+                                                            opportunity for investors wanting exposure to real estate
+                                                            without the headaches or downsides associated with
+                                                            residential or commercial real estate investments.
+                                                            NationWide Self Storage trust offerings are structured to
+                                                            provide investors with monthly income, long-term growth and
+                                                            asset appreciation through a portfolio of either standalone
+                                                            self storage properties or self storage properties with
+                                                            complementing car wash facilities.</p>
+                                                        <h4 class="card-title"> Self Storage Properties with Car Wash
+                                                            Facilities</h4>
+                                                        <p class="lead">
+                                                            Under the brand Express AutoSpa, these car wash facilities
+                                                            will act as a complement to select NationWide Self Storage
+                                                            properties in order to maximize land space and profits.
+                                                        </p>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <br>
+
+                                        <section class="switchable feature-large switchable--switch">
+                                            <div class="container">
+                                                <div class="row justify-content-around">
+                                                    <div class="col-md-6"> <img alt="Image"
+                                                            class="border--round box-shadow-wide"
+                                                            src="img/invest-nation.png"> </div>
+                                                    <div class="col-md-6 col-lg-5">
+                                                        <div class="switchable__text">
+                                                            <h2 class="card-title">How the Investment Works</h2>
+                                                            <p class="lead"> NationWide Self Storage trust offerings use
+                                                                capital raised by a pool of investors to acquire,
+                                                                develop and manage self storage properties in key areas
+                                                                all across North America. Investors, in turn are set to
+                                                                receive monthly cash distributions from the operating
+                                                                income generated from storage rentals. Over time,
+                                                                investors can expect capital appreciation through the
+                                                                increased value of the properties, which in turn makes
+                                                                these properties an attractive liquidity option. </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+
+                                        <section class="switchable feature-large">
+                                            <div class="container">
+                                                <div class="row justify-content-between align-items-center">
+                                                    <div class="col-md-6 col-12">
+                                                            <div class="video-cover border--round">
+                                                                    <div class="background-image-holder" style="background: url(&quot;img/nationwide.jpg&quot;); opacity: 1;"> <img alt="image" src="img/market-one.png"> </div>
+                                                                    <div class=""></div> <iframe data-src="https://www.youtube.com/embed/I_hv2b0SD9s?autoplay=1" allowfullscreen="allowfullscreen"></iframe>
+                                                                </div>
+                                                     
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-5">
+                                                        <div class="switchable__text">
+                                                            <h2>Press Feature: Market One</h2>
+                                                            <p class="lead"> Patrick Wood, leading self storage industry
+                                                                expert and former director Canadian Self Storage
+                                                                Valuation Services speaks on the history of self storage
+                                                                and how it performs well in economic situations such as
+                                                                COVID-19. </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+
+                                        <section class="switchable feature-large feature-large-13">
+                                            <div class="container">
+
+
+                                                <div class="card-title mb-1 border-bottom">
+                                                    <h3 class=""><strong>Research Documents</strong> </h3>
+                                                </div> <br>
+
+                                                <div class="row flex">
+                                                    <div
+                                                        class="col-md-3 col-sm-12 boxed boxed--lg boxed--border box-shadow">
+                                                        <a href="#" class=" ">
+                                                            <div class="property-docs-item " href="#doc"
+                                                                onclick="openDoc('https://keyspire.irrtriview.com/files/nationwide-surrey-study.pdf','Feasibility Study Surrey BC')">
+                                                                <img class="" src="/img/pdf-icon.png" alt="">
+                                                                <div class="property-docs-text">
+                                                                    <h3> Feasibility Study Surrey BC </h3>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-md-1 col-1 "></div>
+                                                    <div class="col-md-3  boxed boxed--lg boxed--border box-shadow">
+                                                        <a href="#" class=" ">
+                                                            <div class="   property-docs-item " href="#doc"
+                                                                onclick="openDoc('https://keyspire.irrtriview.com/files/nationwide-appraisal.pdf','Appraisal of Feasibility Study Surrey BC')">
+                                                                <img class="" src="/img/pdf-icon.png" alt="">
+                                                                <div class="property-docs-text">
+                                                                    <h3> Appraisal of Feasibility Study Surrey BC</h3>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-md-1 col-1 "></div>
+                                                    <div class="col-md-3  boxed boxed--lg boxed--border box-shadow">
+                                                        <a href="#" class=" ">
+                                                            <div class="   property-docs-item " href="#doc"
+                                                                onclick="openDoc('https://keyspire.irrtriview.com/files/nationwide-enviroment-report.pdf','Investment Presentation')">
+                                                                <img class="" src="/img/pdf-icon.png" alt="">
+                                                                <div class="property-docs-text">
+                                                                    <h3>
+                                                                        Environmental Report - Surrey BC</h3>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+
+
+                                                </div>
+
+
+                                                <br><br>
+                                            </div>
+                                            <section>
+                                                <div class="container">
+                                                    <div class="masonry">
+
+                                                        <div class="masonry__container row masonry--active">
+                                                            <div class="masonry__item col-md-6 col-12 filter-filter-1"
+                                                                data-masonry-filter="Filter 1">
+                                                                <div class="video-cover border--round">
+                                                                    <div class="background-image-holder"> <img
+                                                                            alt="image" src="img/nationwide.jpg"> </div>
+                                                                    <div class="video-play-icon"></div> <iframe
+                                                                        data-src="https://www.youtube.com/embed/qIG7Zob6Yn0?autoplay=1"
+                                                                        allowfullscreen="allowfullscreen"></iframe>
+                                                                </div> <span class="h4 inline-block">
+                                                                    <p>NationWide IV Presentation</p>
+                                                                </span> <span> </span>
+                                                            </div>
+                                                            <div class="masonry__item col-md-6 col-12 filter-filter-1"
+                                                                data-masonry-filter="Filter 1">
+                                                                <div class="video-cover border--round">
+                                                                    <div class="background-image-holder"> <img
+                                                                            alt="image" src="img/market-one.png"> </div>
+                                                                    <div class="video-play-icon"></div> <iframe
+                                                                        data-src="https://www.youtube.com/embed/I_hv2b0SD9s?autoplay=1"
+                                                                        allowfullscreen="allowfullscreen"></iframe>
+                                                                </div> <span class="h4 inline-block">
+                                                                    <yt-formatted-string force-default-style="">Market
+                                                                        One Interview</yt-formatted-string>
+                                                                </span>
+                                                            </div>
+                                                            <div class="masonry__item col-md-6 col-12 filter-filter-1"
+                                                                data-masonry-filter="Filter 1">
+                                                                <div class="video-cover border--round">
+                                                                    <div class="background-image-holder"> <img
+                                                                            alt="image" src="img/phone.png"> </div>
+                                                                    <div class="video-play-icon"></div> <iframe
+                                                                        data-src="https://www.youtube.com/embed/jVIsRGpLyWk?autoplay=1"
+                                                                        allowfullscreen="allowfullscreen"></iframe>
+                                                                </div> <span class="h4 inline-block">
+                                                                    <yt-formatted-string force-default-style="">Nation
+                                                                        Wide Self Storage - Keyless Self Storage
+                                                                    </yt-formatted-string>
+                                                                </span>
+                                                            </div>
+                                                            <div class="masonry__item col-md-6 col-12 filter-filter-1"
+                                                                data-masonry-filter="Filter 1">
+                                                                <div class="video-cover border--round">
+                                                                    <div class="background-image-holder"> <img
+                                                                            alt="image" src="img/express.png"> </div>
+                                                                    <div class="video-play-icon"></div> <iframe
+                                                                        data-src="https://www.youtube.com/embed/daUvs2jeHW0?autoplay=1"
+                                                                        allowfullscreen="allowfullscreen"></iframe>
+                                                                </div> <span class="h4 inline-block">
+                                                                    <p>
+                                                                        <yt-formatted-string force-default-style="">
+                                                                            Express Auto Wash Tunnel
+                                                                        </yt-formatted-string><br>
+                                                                    </p>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </section>
+
+
+                                        <br>
+                                        <!-- Documents -->
+
+                                        <section class="text-center">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-md-8 col-lg-6">
+                                                        <h2>NationWide IV - Video Presentation</h2>
+                                                        <div class="video-cover border--round">
+                                                            <div class="background-image-holder"> <img alt="image"
+                                                                    src="img/nationwide.jpg"> </div>
+                                                            <div class="video-play-icon"></div> <iframe
+                                                                data-src="https://www.youtube.com/embed/qIG7Zob6Yn0?autoplay=1"
+                                                                allowfullscreen="allowfullscreen"></iframe>
+                                                        </div> <span>Presented by NationWide IV&nbsp;Self Storage &amp;
+                                                            Auto Wash Trust<br></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+
+                                        <!-- DR contact information-->
+                                        <section class="switchable feature-large pt-5">
+                                            <div class="container">
+                                                <div class="row justify-content-around">
+                                                    <div class="col-md-6"> <img alt="Image"
+                                                            class="border--round box-shadow-wide"
+                                                            src="img/irr-team.png"> </div>
+                                                    <div class="col-md-6 col-lg-5">
+                                                        <div class="switchable__text">
+                                                            <h2>Talk to us about investing.<br> <b> We are here to
+                                                                    help.</b></h2> <br>
+                                                            <p class="lead"> We have over 20 years experience helping
+                                                                investors grow their wealth sustainably. </p>
+                                                            <!-- <p class="lead"><b>Email:</b> caasen@triviewcapital.com <br><b> Phone:</b> +1604-768-5647  </p>  -->
+                                                            <!-- <a class="btn btn-invest btn--primary mb-0 block "
+                                                                href="https://calendly.com/austincarroll/nationwide">
+                                                                <span class="btn__text">
+                                                                    <span class="btn-invest-text">I'M
+                                                                        INTERESTED<br><span class="invest-min">BOOK 1 ON
+                                                                            1
+                                                                        </span></span>
+                                                                </span>
+                                                            </a> -->
+                                                        </div>
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <!-- Creating Wealth for Our -->
+
+
+
+
+
+
+
+                                    </div>
+                                </li>
+                                <!-- ======================================================================= -->
+                                <!-- ================= NEW TAB ============================================= -->
+                                <!-- ======================================================================= -->
+                                <li>
+                                    <div class="tab__content">
+                                        <!-- Property Overview -->
+                                        <section class="switchable feature-large feature-large-13">
+                                            <div class="container">
+
+
+                                                <div class="card-title mb-1 border-bottom">
+                                                    <h3 class=""><strong>Documents</strong> </h3>
+                                                </div> <br>
+
+                                                <div class="row flex">
+                                                    <div
+                                                        class="col-md-3 col-sm-12 boxed boxed--lg boxed--border box-shadow">
+                                                        <a href="#" class=" ">
+                                                            <div class="property-docs-item " href="#doc"
+                                                                onclick="openDoc('https://keyspire.irrtriview.com/files/nationwide-ex.pdf','Executive Summary')">
+                                                                <img class="" src="/img/pdf-icon.png" alt="">
+                                                                <div class="property-docs-text">
+                                                                    <h3> Executive Summary </h3>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-md-1 col-1 "></div>
+                                                    <div class="col-md-3  boxed boxed--lg boxed--border box-shadow">
+                                                            <a href="#" class=" ">
+                                                                <div class="   property-docs-item " href="#doc"
+                                                                    onclick="openDoc('https://keyspire.irrtriview.com/files/nationwide-trustd.pdf','Declaration of Trust')">
+                                                                    <img class="" src="/img/pdf-icon.png" alt="">
+                                                                    <div class="property-docs-text">
+                                                                        <h3> Declaration of Trust</h3>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    <div class="col-md-1 col-1 "></div>
+                                                    <div class="col-md-3  boxed boxed--lg boxed--border box-shadow">
+                                                        <a href="#" class=" ">
+                                                            <div class="   property-docs-item " href="#doc"
+                                                                onclick="openDoc('https://keyspire.irrtriview.com/files/nationwide-slides.pdf','Investment Presentation')">
+                                                                <img class="" src="/img/pdf-icon.png" alt="">
+                                                                <div class="property-docs-text">
+                                                                    <h3>Investment Presentation</h3>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+
+
+                                                </div>
+
+                                               
+                                                <div class="card-title mb-1 border-bottom">
+                                                    <h3 class=""><strong>Research Documents</strong> </h3>
+                                                </div> <br>
+
+                                                <div class="row flex">
+                                                    <div
+                                                        class="col-md-3 col-sm-12 boxed boxed--lg boxed--border box-shadow">
+                                                        <a href="#" class=" ">
+                                                            <div class="property-docs-item " href="#doc"
+                                                                onclick="openDoc('https://keyspire.irrtriview.com/files/nationwide-surrey-study.pdf','Feasibility Study Surrey BC')">
+                                                                <img class="" src="/img/pdf-icon.png" alt="">
+                                                                <div class="property-docs-text">
+                                                                    <h3> Feasibility Study Surrey BC </h3>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-md-1 col-1 "></div>
+                                                    <div class="col-md-3  boxed boxed--lg boxed--border box-shadow">
+                                                        <a href="#" class=" ">
+                                                            <div class="   property-docs-item " href="#doc"
+                                                                onclick="openDoc('https://keyspire.irrtriview.com/files/nationwide-appraisal.pdf','Appraisal of Feasibility Study Surrey BC')">
+                                                                <img class="" src="/img/pdf-icon.png" alt="">
+                                                                <div class="property-docs-text">
+                                                                    <h3> Appraisal of Feasibility Study Surrey BC</h3>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-md-1 col-1 "></div>
+                                                    <div class="col-md-3  boxed boxed--lg boxed--border box-shadow">
+                                                        <a href="#" class=" ">
+                                                            <div class="   property-docs-item " href="#doc"
+                                                                onclick="openDoc('https://keyspire.irrtriview.com/files/nationwide-enviroment-report.pdf','Investment Presentation')">
+                                                                <img class="" src="/img/pdf-icon.png" alt="">
+                                                                <div class="property-docs-text">
+                                                                    <h3>
+                                                                        Environmental Report - Surrey BC</h3>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+
+
+                                                </div>
+
+                                                <br><br>
+                                            </div>
+                                            <section>
+                                                <div class="container">
+                                                    <div class="masonry">
+
+                                                        <div class="masonry__container row masonry--active">
+                                                            <div class="masonry__item col-md-6 col-12 filter-filter-1"
+                                                                data-masonry-filter="Filter 1">
+                                                                <div class="video-cover border--round">
+                                                                    <div class="background-image-holder"> <img
+                                                                            alt="image" src="img/nationwide.jpg"> </div>
+                                                                    <div class="video-play-icon"></div> <iframe
+                                                                        data-src="https://www.youtube.com/embed/qIG7Zob6Yn0?autoplay=1"
+                                                                        allowfullscreen="allowfullscreen"></iframe>
+                                                                </div> <span class="h4 inline-block">
+                                                                    <p>NationWide IV Presentation</p>
+                                                                </span> <span> </span>
+                                                            </div>
+                                                            <div class="masonry__item col-md-6 col-12 filter-filter-1"
+                                                                data-masonry-filter="Filter 1">
+                                                                <div class="video-cover border--round">
+                                                                    <div class="background-image-holder"> <img
+                                                                            alt="image" src="img/market-one.png"> </div>
+                                                                    <div class="video-play-icon"></div> <iframe
+                                                                        data-src="https://www.youtube.com/embed/I_hv2b0SD9s?autoplay=1"
+                                                                        allowfullscreen="allowfullscreen"></iframe>
+                                                                </div> <span class="h4 inline-block">
+                                                                    <yt-formatted-string force-default-style="">Market
+                                                                        One Interview</yt-formatted-string>
+                                                                </span>
+                                                            </div>
+                                                            <div class="masonry__item col-md-6 col-12 filter-filter-1"
+                                                                data-masonry-filter="Filter 1">
+                                                                <div class="video-cover border--round">
+                                                                    <div class="background-image-holder"> <img
+                                                                            alt="image" src="img/phone.png"> </div>
+                                                                    <div class="video-play-icon"></div> <iframe
+                                                                        data-src="https://www.youtube.com/embed/jVIsRGpLyWk?autoplay=1"
+                                                                        allowfullscreen="allowfullscreen"></iframe>
+                                                                </div> <span class="h4 inline-block">
+                                                                    <yt-formatted-string force-default-style="">Nation
+                                                                        Wide Self Storage - Keyless Self Storage
+                                                                    </yt-formatted-string>
+                                                                </span>
+                                                            </div>
+                                                            <div class="masonry__item col-md-6 col-12 filter-filter-1"
+                                                                data-masonry-filter="Filter 1">
+                                                                <div class="video-cover border--round">
+                                                                    <div class="background-image-holder"> <img
+                                                                            alt="image" src="img/express.png"> </div>
+                                                                    <div class="video-play-icon"></div> <iframe
+                                                                        data-src="https://www.youtube.com/embed/daUvs2jeHW0?autoplay=1"
+                                                                        allowfullscreen="allowfullscreen"></iframe>
+                                                                </div> <span class="h4 inline-block">
+                                                                    <p>
+                                                                        <yt-formatted-string force-default-style="">
+                                                                            Express Auto Wash Tunnel
+                                                                        </yt-formatted-string><br>
+                                                                    </p>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+
+                                        </section>
+                                        <!-- Location Overview -->
+
+
+                                        <!-- DR contact information-->
+                                        <section class="switchable feature-large pt-5">
+                                            <div class="container">
+                                                <div class="row justify-content-around">
+                                                    <div class="col-md-6"> <img alt="Image"
+                                                            class="border--round box-shadow-wide"
+                                                            src="img/irr-team.png"> </div>
+                                                    <div class="col-md-6 col-lg-5">
+                                                        <div class="switchable__text">
+                                                            <h2>Talk to us about investing.<br> <b> We are here to
+                                                                    help.</b></h2> <br>
+                                                            <p class="lead"> We have over 20 years experience helping
+                                                                investors grow their wealth sustainably. </p>
+                                                            <!-- <p class="lead"><b>Email:</b> caasen@triviewcapital.com <br><b> Phone:</b> +1604-768-5647  </p>  -->
+                                                            <!-- <a class="btn btn-invest btn--primary mb-0 block "
+                                                                href="https://calendly.com/austincarroll/nationwide">
+                                                                <span class="btn__text">
+                                                                    <span class="btn-invest-text">I'M
+                                                                        INTERESTED<br><span class="invest-min">BOOK 1 ON
+                                                                            1
+                                                                        </span></span>
+                                                                </span>
+                                                            </a> -->
+                                                        </div>
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+
+                                    </div>
+                                </li>
+                                <!-- ======================================================================= -->
+                                <!-- ================= NEW TAB ============================================= -->
+                                <!-- ======================================================================= -->
+                                <li>
+                                    <div class="tab__content">
+                                        <div class="col-sm-10 center">
+                                            <br><br><br>
+
+                                            <section>
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-md-10 col-lg-8">
+                                                            <h1>Nation Wide Team</h1>
+                                                            <h3>Trustees and Directors</h3>
+
+                                                            <p class="lead"> NationWide Self Storage and NationWide Self
+                                                                Storage &amp; Auto Wash trust offerings are managed by
+                                                                NationWide Self Storage Management Corp. also known as
+                                                                the ‘General Partner’ or the Trust
+                                                                Administrator.<br><br>The Executive Management team and
+                                                                Board of Directors of the General Partner are comprised
+                                                                of a group of experienced professionals and engineers
+                                                                with a proven and established success in the Canadian
+                                                                financial services and the investment management
+                                                                business. </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                            <section class="text-center">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <div class="feature feature-8"> <img alt="Image"
+                                                                    src="img/hugh.jpg">
+                                                                <h5>Hugh Cartwright</h5> <span><b>Trustee of the Trust,
+                                                                        Chairman &amp; Director of the
+                                                                        Administrator</b></span><br><span><br>Over 20
+                                                                    years investment banking, syndication and
+                                                                    administration experience.</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="feature feature-8"> <img alt="Image"
+                                                                    src="img/shane.jpg">
+                                                                <h5>Shane Doyle</h5> <span><b>CEO &amp; Director of the
+                                                                        Administrator</b><br></span><br><span>Over 15
+                                                                    years corporate finance advisory, business
+                                                                    development, client relationship management and
+                                                                    territorial oversight.<br></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="feature feature-8"> <img alt="Image"
+                                                                    src="img/byron.jpg">
+                                                                <h5>Byron Striloff</h5> <span><b>Director of the
+                                                                        Administrator, Trustee of the
+                                                                        Trust</b></span><br><span> <br>Over 35 years as
+                                                                    a senior investment advisor in the area of personal
+                                                                    and corporate investment management, tax planning,
+                                                                    venture capital, insurance and estate
+                                                                    planning.</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="feature feature-8"> <img alt="Image"
+                                                                    src="img/nancy.jpg">
+                                                                <h5>Nancy Goertzen, CPIR<br></h5> <span><b>Director of
+                                                                        the Administrator</b></span><br><span><br>Over
+                                                                    25 years of experience in corporate development,
+                                                                    strategic partnerships, fund raising and investor
+                                                                    relations with public companies.</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="feature feature-8"> <img alt="Image"
+                                                                    src="img/john.jpg">
+                                                                <h5>John Dickson<br></h5> <span><b>Trustee, CFO &amp;
+                                                                        Director</b></span><br><span><br>Over 15 years
+                                                                    of experience in financial management, accounting
+                                                                    and securities reporting.</span>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </section>
+                                            <section>
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-md-10 col-lg-8">
+                                                            <h1>Operations Management Team</h1>
+                                                            <p class="lead"> Over the past decade the storage industry
+                                                                has experienced an evolution in technology, marketing,
+                                                                facility design and customer expectations. <br>With this
+                                                                direction in mind, NationWide has engaged two highly
+                                                                experienced Operations Directors to lead NationWide’s
+                                                                Operations Management team. <br><br>The Operations
+                                                                Directors will oversee the day-to-day operations of the
+                                                                NationWide self storage and auto wash
+                                                                facilities. NationWide’s Operations Management team is
+                                                                committed to operating our business with the best
+                                                                possible customer service, marketing, efficient
+                                                                training and development and store design. With over 25
+                                                                years direct experience building business from the
+                                                                ground up, the team aims to increase investor value and
+                                                                growth. </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                            <section class="text-center">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <div class="feature feature-8"> <img alt="Image"
+                                                                    src="img/ayaaz.jpg">
+                                                                <h5>Ayaaz Jamal</h5> <span><b>Operations Director, Auto
+                                                                        Wash Division</b><br></span><br><span>Mr. Jamal
+                                                                    is focused on the design, development and overall
+                                                                    management of NationWide’s state-of-the-art express
+                                                                    auto wash and auto detailing facilities on
+                                                                    NationWide properties.<br></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="feature feature-8"> <img alt="Image"
+                                                                    src="img/chedwick.jpg">
+                                                                <h5>Chedwick Schultz</h5> <span><b>Operations Director,
+                                                                        Self Storage Division</b></span><br><span><br>Mr.
+                                                                    Schultz is focused on the design, development and
+                                                                    overall management of NationWide’s modern self
+                                                                    storage facilities and customer storefront and
+                                                                    merchandising.</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+
+                                            <!-- Our Track Record -->
+
+
+
+
+
+
+                                        </div>
+                                        <!-- DR contact information-->
+                                        <section class="switchable feature-large pt-5">
+                                            <div class="container">
+                                                <div class="row justify-content-around">
+                                                    <div class="col-md-6"> <img alt="Image"
+                                                            class="border--round box-shadow-wide"
+                                                            src="img/irr-team.png"> </div>
+                                                    <div class="col-md-6 col-lg-5">
+                                                        <div class="switchable__text">
+                                                            <h2>Talk to us about investing.<br> <b> We are here to
+                                                                    help.</b></h2> <br>
+                                                            <p class="lead"> We have over 20 years experience helping
+                                                                investors grow their wealth sustainably. </p>
+                                                            <!-- <p class="lead"><b>Email:</b> caasen@triviewcapital.com <br><b> Phone:</b> +1604-768-5647  </p>  -->
+                                                            <!-- <a class="btn btn-invest btn--primary mb-0 block "
+                                                                href="https://calendly.com/austincarroll/nationwide">
+                                                                <span class="btn__text">
+                                                                    <span class="btn-invest-text">I'M
+                                                                        INTERESTED<br><span class="invest-min">BOOK 1 ON
+                                                                            1
+                                                                        </span></span>
+                                                                </span>
+                                                            </a> -->
+                                                        </div>
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+
+                                </li>
+
+                                <!-- ======================================================================= -->
+                                <!-- ================= NEW TAB ============================================= -->
+                                <!-- ======================================================================= -->
+                                <li>
+                                    <div class="tab__content">
+                                        <div class="container text-center">
+                                            <div class="row">
+
+
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12 col-lg-12 pt-5">
+
+
+
+                                                    <!-- DR contact information-->
+                                                    <section class="switchable feature-large pt-5">
+                                                        <div class="container">
+                                                            <div class="row justify-content-around">
+                                                                <div class="col-md-6"> <img alt="Image"
+                                                                        class="border--round box-shadow-wide"
+                                                                        src="img/irr-team.png"> </div>
+                                                                <div class="col-md-6 col-lg-5">
+                                                                    <div class="switchable__text">
+                                                                        <h2>Talk to us about investing.<br> <b> We are
+                                                                                here to help.</b></h2> <br>
+                                                                        <p class="lead"> We have over 20 years
+                                                                            experience helping investors grow their
+                                                                            wealth sustainably. </p>
+                                                                        <!-- <p class="lead"><b>Email:</b> caasen@triviewcapital.com <br><b> Phone:</b> +1604-768-5647  </p>  -->
+                                                                        <a class="btn btn-invest btn--primary mb-0 block "
+                                                                            href="https://calendly.com/austincarroll/nationwide">
+                                                                            <span class="btn__text">
+                                                                                <span class="btn-invest-text">I'M
+                                                                                    INTERESTED<br><span
+                                                                                        class="invest-min">BOOK 1 ON 1
+                                                                                    </span></span>
+                                                                            </span>
+                                                                        </a>
+                                                                    </div>
+
+
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </section>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- ======================================================================= -->
+                                <!-- ================= NEW TAB ============================================= -->
+                                <!-- ======================================================================= -->
+                                <li>
+                                    <div class="tab__content">
+                                        <section class="text-center">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-md-10 col-lg-8"><br><br><br>
+                                                        <h1>Forward Looking Statements </h1>
+                                                        <p class="lead">
+                                                            This document includes “forward-looking statements” and
+                                                            “forward-looking information” (collectively,
+                                                            “forward-looking
+                                                            statements”) and “financial outlook” within the meaning of
+                                                            applicable securities laws. </p>
+
+                                                        <p class="lead">All statements other than statements of
+                                                            historical facts
+                                                            included in this document, including, without limitation,
+                                                            statements
+                                                            regarding the future financial position, targeted or
+                                                            projected
+                                                            investment returns, business strategy, budgets and projected
+                                                            costs
+                                                            of the Partnership and plans and objectives of the
+                                                            Partnership for
+                                                            further operations, are forward-looking statements or
+                                                            financial
+                                                            outlook.</p>
+
+                                                        <p class="lead">In addition, forward-looking statements and
+                                                            financial
+                                                            outlook generally can be identified by the use of
+                                                            forward-looking
+                                                            terminology such as “may,” “will,” “expect,” “intend,”
+                                                            “forecasted,”
+                                                            “projected,” “estimate,” “anticipate,” “believe,” or
+                                                            “continue” or
+                                                            the negative usages thereof or variations thereon or similar
+                                                            terms,
+                                                            although not all forward-looking statements or financial
+                                                            outlook
+                                                            contain these identifying words. </p>
+
+                                                        <p class="lead">Forward-looking statements and financial outlook
+                                                            reflect
+                                                            our current expectations and assumptions as of the date of
+                                                            the
+                                                            statements and are subject to a number of known and unknown
+                                                            risks,
+                                                            uncertainties and other factors, including, without
+                                                            limitation,
+                                                            those listed under the heading “Risk Factors” below, many of
+                                                            which
+                                                            are beyond our control, which may cause actual results,
+                                                            performance
+                                                            or achievements to be materially different from any
+                                                            anticipated
+                                                            future results, performance or achievements expressed or
+                                                            implied by
+                                                            the forward-looking statements. </p>
+
+                                                        <p class="lead"> Although we believe that the assumptions on
+                                                            which the
+                                                            forward-looking statements are made and the financial
+                                                            outlook is
+                                                            based, including, without limitation, those assumptions
+                                                            listed under
+                                                            heading “Assumptions” below, are reasonable, based on the
+                                                            information available to it on the date such statements were
+                                                            made,
+                                                            no assurances can be given as to whether these assumptions
+                                                            will
+                                                            prove to be correct. Given these uncertainties, readers are
+                                                            cautioned that forward-looking statements and financial
+                                                            outlook
+                                                            contained herein are not guarantees of future performance;
+                                                            accordingly, readers should not place undue reliance on
+                                                            forward-looking statements or financial outlook.
+
+                                                        </p>
+                                                        <p class="lead">To the extent any forward-looking statements in
+                                                            this
+                                                            this document constitute “financial outlook” within the
+                                                            meaning
+                                                            of applicable securities laws, such information is being
+                                                            provided, so that readers are aware of management’s current
+                                                            estimate of future financial performance of the Partnership
+                                                            (which estimates are subject to change). We will not update
+                                                            any
+                                                            forward-looking statements or financial outlook except as,
+                                                            and
+                                                            to the extent, required by applicable securities laws. </p>
+
+                                                        <p class="lead">
+                                                            The forward-looking statements and financial outlook
+                                                            contained
+                                                            herein, and all subsequent written and oral forward-looking
+                                                            statements and financial outlook attributable to the
+                                                            Partnership, or persons acting on any of their behalf, are
+                                                            expressly qualified in their entirety by this cautionary
+                                                            statement. No representation or warranty is made by the
+                                                            Partnership as to the accuracy or completeness of any of the
+                                                            information contained herein. </p>
+                                                        <p class="lead">No securities commission or similar regulatory
+                                                            authority has passed on the merits of the securities
+                                                            referred to
+                                                            hereunder and any representation to the contrary is an
+                                                            offence.
+                                                            In considering the prior performance information contained
+                                                            herein, prospective investors should bear in mind that past
+                                                            performance is not necessarily indicative of future results,
+                                                            and
+                                                            there can be no assurance that the Partnership will achieve
+                                                            comparable results.
+                                                        </p>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <!-- DR contact information-->
+                                        <section class="switchable feature-large pt-5">
+                                            <div class="container">
+                                                <div class="row justify-content-around">
+                                                    <div class="col-md-6"> <img alt="Image"
+                                                            class="border--round box-shadow-wide"
+                                                            src="img/irr-team.png"> </div>
+                                                    <div class="col-md-6 col-lg-5">
+                                                        <div class="switchable__text">
+                                                            <h2>Talk to us about investing.<br> <b> We are here to
+                                                                    help.</b></h2> <br>
+                                                            <p class="lead"> We have over 20 years experience helping
+                                                                investors grow their wealth sustainably. </p>
+                                                            <!-- <p class="lead"><b>Email:</b> caasen@triviewcapital.com <br><b> Phone:</b> +1604-768-5647  </p>  -->
+                                                            <!-- <a class="btn btn-invest btn--primary mb-0 block "
+                                                                href="https://calendly.com/austincarroll/nationwide">
+                                                                <span class="btn__text">
+                                                                    <span class="btn-invest-text">I'M
+                                                                        INTERESTED<br><span class="invest-min">BOOK 1 ON
+                                                                            1
+                                                                        </span></span>
+                                                                </span>
+                                                            </a> -->
+                                                        </div>
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+
+                                    </div>
+                                </li>
+                                <!-- ======================================================================= -->
+                                <!-- ================= NEW TAB ============================================= -->
+                                <!-- ======================================================================= -->
+                                <li>
+                                    <div class="tab__content">
+                                        <section class="switchable">
+                                            <div class="container">
+                                                <div class="row justify-content-between">
+                                                    <div class="col-md-12 switchable__text text-center"><br><br><br>
+                                                        <h1>Frequently Asked Questions</h1>
+                                                        <div class="row">
+
+                                                            <div class="col-md-3">
+
+                                                            </div>
+
+                                                            <div class="col-md-6">
+                                                                <div class="col-md-12 col-12">
+
+
+                                                                    <h2>NationWide IV - Video Presentation</h2>
+                                                                    <div class="video-cover border--round">
+                                                                        <div class="background-image-holder"> <img
+                                                                                alt="image" src="img/nationwide.jpg">
+                                                                        </div>
+                                                                        <div class="video-play-icon"></div> <iframe
+                                                                            data-src="https://www.youtube.com/embed/qIG7Zob6Yn0?autoplay=1"
+                                                                            allowfullscreen="allowfullscreen"></iframe>
+                                                                    </div> <span>Presented by NationWide IV&nbsp;Self
+                                                                        Storage &amp; Auto Wash Trust<br></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-3">
+
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+
+                                            </div>
+                                    </div>
+                                    </section>
+                                    <!-- DR contact information-->
+                                    
+                        </div>
+                        </li>
+
+                        </ul>
+                    </div>
+                    <!--end of tabs container-->
+                </div>
+                </div>
+
+
+            </strong></strong>
+
+
+
+
+
+
+
+        <div class="row">
+
+
+            <div class="col-md-12 p-5 text-center ">
+
+                <div class="tabs-container pt-1" data-content-align="left" id="tabs">
+                    <!-- <div class="fix-top-on-scroll">
+
+                        <select class="custom-select " id="select">
+                            <option value="0"><i class="far fa-file-powerpoint"></i> Overview </option>
+                            <option value="1"><i class="far fa-file-pdf"></i> Property </option>
+                            <option value="2"><i class="far fa-file-powerpoint"></i> Issuer </option>
+                            <option value="3"><i class="far fa-file-powerpoint"></i> Tax Considerations </option>
+                            <option value="4"><i class="far fa-file-powerpoint"></i> Forward Looking </option>
+                            <option value="5"><i class="far fa-question-circle"></i> Q&amp;A</option>
+                        </select>
+                        <ul class="tabs ">
+                            <li class="active">
+                                <div class="tab__title ">
+                                    <a href="#tabs" class="h5"><i class="far fa-file-powerpoint"></i> Overview </a>
+                                </div>
+
+                            </li>
+                            <li>
+                                <div class="tab__title">
+                                    <a href="#tabs" class="h5"><i class="far fa-file-pdf"></i> Property </a>
+                                </div>
+
+                            </li>
+                            <li>
+                                <div class="tab__title">
+                                    <a href="#tabs" class="h5"><i class="fas fa-user-alt"></i> Issuer</a>
+                                </div>
+
+                            </li>
+
+
+                            <li>
+                                <div class="tab__title">
+                                    <a href="#tabs" class="h5"><i class="far fa-clock"></i> Tax Considerations </a>
+                                </div>
+
+                            </li>
+                            <li>
+                                <div class="tab__title">
+                                    <a href="#tabs" class="h5"><i class="fas fa-exclamation-circle"></i> Forward Looking
+                                        Statements</a>
+                                </div>
+
+                            </li>
+                            <li>
+                                <div class="tab__title">
+                                    <a href="#tabs" class="h5"><i class="far fa-question-circle"></i> Q&amp;A</a>
+                                </div>
+
+                            </li>
+                            <li class="tab-invest fade" style="display: none;">
+                                <div class="tab__title">
+                                    <a class="btn btn-sm type--uppercase bg-reitium "
+                                        href="http://triviewapp.com/ref/invest/5e1dacbe062c6b2e113b0d1b/5d9cc7c891913971a48bbf6a">
+                                        <span class="btn__text">
+                                            <span class="btn-invest-text">Invest </span>
+                                        </span>
+                                    </a>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div> -->
+
+
+
+
+                    <div class="modal fade" id="doc-modal" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header pl-24 pr-24 align-center">
+                                    <h5 class="modal-title h4 mb-0 type--600" id="doc-modal-title">Document</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span class="font-24" aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="">
+                                        <iframe id="document-preview" src="" width="100%" height="100%"
+                                            style="height: 768px;">
+                                        </iframe>
+                                    </div>
+                                </div>
+                                <div class="modal-footer pl-24 pr-24">
+                                    <div id="okButton"><a class="btn btn-primary text-white" data-dismiss="modal">Ok</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        function openDoc(location, fileName) {
+
+                            $("#document-preview").prop('src', location);
+                            $("#document-link").prop('href', location);
+                            $("#doc-modal-title").html(fileName);
+                            $("#doc-modal").modal()
+                        }
+                    </script>
+                    <style>
+                        .small-docs img {
+                            height: 45px;
+                            margin-bottom: 0;
+                        }
+
+                        .small-docs .property-docs-text {
+                            font-size: 12px;
+                        }
+
+                        .small-docs .property-docs-item {
+                            min-width: 111px;
+                        }
+                    </style>
+
+                    <link rel="stylesheet" href="/js/plugins/light.youtube.embeds/light.youtube.embeds.css">
+                    <footer class="pt-4 mt-md-5 pt-md-5 border-top">
+                        <div class="container footer-bg">
+                            <div class="row">
+                                <div class="col-sm-4 ">
+                                    <div class="align-center">
+
+                                        <img class="img-fluid mb-0" src="/img/logos/tvc-new-logo.png">
+
+                                        <span class="footer-reitium ml-12"><span class="reitium-font">Triview
+                                                Capital</span></span>
+                                    </div>
+                                    <small class="d-block mb-3 text-muted">© 2020</small>
+                                    <!-- <div class="call-telegram">
+                    Join Our Growing Community <br>
+                    On Telegram.
+                </div>
+                <a class="btn btn-telegram" href="https://t.me/reitium">Join <span class="reitium-font">Reitium</span>
+                    Telegram</a> -->
+                                </div>
+                                <div class="col-sm-8">
+                                    <div class="disclaimer">
+                                        <h5>DISCLAIMER</h5>
+                                        <p>
+
+                                            IMPORTANT INFORMATION: This communication is for information purposes only
+                                            and is not, and
+                                            under no circumstances to be
+                                            construed as an invitation to make an investment in any securities,
+                                            nor does it constitute a public offering to sell securities or any other
+                                            products described
+                                            herein.
+                                        <p>
+                                            It should not be relied upon when evaluating the merits of a potential
+                                            investment.
+                                            Investment shall only be considered on the terms of the Confidential
+                                            Offering Memorandum
+                                            and/or Subscription documents
+                                            or other such offering materials as may be applicable for investors in
+                                            jurisdictions of
+                                            Canada that meet certain eligibility or minimum purchase requirements.
+                                        </p>
+                                        <p>
+                                            Any investments will also be subject further to Know your client and
+                                            suitability review
+                                            and requirements of TriView Capital Ltd.
+                                        </p>
+                                        <p>
+                                            TriView Capital LTD is a Registered EMD (EMD) across Western Canada and
+                                            Ontario.
+                                        </p>
+                                        <p>
+                                            TriView Capital (EMDs) is a fully registered securities dealers who engage
+                                            in the
+                                            business
+                                            of
+                                            trading in prospectus exempt securities, or any securities to qualified
+                                            exempt market
+                                            clients.
+                                        </p>
+                                        <p>
+                                            All investors must pass Tri View Capital LTD KYC compliance screening before
+                                            being able
+                                            to
+                                            invest.
+                                            All Investment deals must pass through Tri View Capital LTD Due Diligence
+                                            screening
+                                            before
+                                            being
+                                            offered on TRI VIEW PLATFORM.
+                                        </p>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </footer>
+                    <script>
+                        $(document).ready(function () {
+                            $('#select').change(function (e) {
+                                var val = $(this).val();
+                                var items = $('ul.tabs  li');
+                                $(items[val]).click();
+                                console.log(`$(items[val]).find(a)`, $(items[val]).find(`a`));
+                                $('html, body').animate({
+                                    scrollTop: $("#tabs").offset().top
+                                }, 1000);
+                            });
+                        });
+                    </script>
+                    <style>
+                        .navbar-brand img {
+                            height: 25px;
+                        }
+
+                        #select {
+                            display: none;
+                            height: 50px;
+                            color: white;
+                            font-size: 20px;
+                            background-size: 15px 17px;
+                        }
+
+                        /* On screens that are 600px or less, set the background color to olive */
+                        @media screen and (max-width: 770px) {
+                            ul.tabs {
+                                display: none;
+                            }
+
+                            #select {
+                                display: block;
+                            }
+
+                        }
+
+
+                        .modal-content {
+                            width: 100% !important;
+                        }
+
+                        .feature-large-13:not(.text-center) .text-block p {
+                            max-width: unset;
+
+                        }
+
+
+                        .input-group-text {
+                            border-color: #2c3e50;
+                            background-color: #2c3e50;
+                            color: #fff;
+                        }
+
+                        .form-control {
+                            font-size: 20px
+                        }
+
+                        #total {
+                            font-size: 25px
+                        }
+
+
+                        .donating {
+                            font-size: smaller;
+
+                        }
+
+                        #simbol {
+                            position: absolute;
+                            left: 5px;
+                            z-index: 5;
+                            font-size: 12px;
+                            color: black;
+                            top: 1px;
+                        }
+
+                        #money {
+                            padding-left: 30px;
+                        }
+                    </style>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                        crossorigin="anonymous">
+                        </script>
+                    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+                        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                        crossorigin="anonymous">
+                        </script>
+
+                    <script src="/js/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+                    <link href="/js/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
+
+                    <script src="/js/stack-theme-scripts.js"></script>
+                    <script src="/js/plugins/textarea.countdown/textarea.countdown.js"></script>
+                    <script src="/js/plugins/smooth-scroll.min.js"></script>
+
+                    <a class="back-to-top inner-link" href="#start" data-scroll-class="100vh:active">
+                        <i class="fas fa-chevron-up"></i>
+                    </a>
+                    <script>
+                        $(".photo-box-indicator").find('.list-inline-item').on("click", function (event) {
+
+                            $(this).addClass('active');
+                        });
+
+                        $('#carouselExampleIndicators').on('slide.bs.carousel', function (e) {
+                            console.log($(e.relatedTarget).index());
+                            $(".photo-box-indicator").find('.list-inline-item').each(function () {
+                                $(this).removeClass('active');
+                            });
+
+                            var slide = $(e.relatedTarget).index();
+                            $(".photo-box-indicator").find('[data-slide-to="' + slide + '"]').addClass('active');
+                        })
+
+                        function navigateTo(navigationUrl) {
+                            document.location = navigationUrl;
+                        }
+                    </script>
+                    <script>
+                        window.intercomSettings = {
+                            app_id: "pygu3tge"
+                        };
+                    </script>
+
+                    <script>
+                        (function () {
+                            var w = window;
+                            var ic = w.Intercom;
+                            if (typeof ic === "function") {
+                                ic('reattach_activator');
+                                ic('update', w.intercomSettings);
+                            } else {
+                                var d = document;
+                                var i = function () {
+                                    i.c(arguments);
+                                };
+                                i.q = [];
+                                i.c = function (args) {
+                                    i.q.push(args);
+                                };
+                                w.Intercom = i;
+                                var l = function () {
+                                    var s = d.createElement('script');
+                                    s.type = 'text/javascript';
+                                    s.async = true;
+                                    s.src = 'https://widget.intercom.io/widget/pygu3tge';
+                                    var x = d.getElementsByTagName('script')[0];
+                                    x.parentNode.insertBefore(s, x);
+                                };
+                                if (w.attachEvent) {
+                                    w.attachEvent('onload', l);
+                                } else {
+                                    w.addEventListener('load', l, false);
+                                }
+                            }
+                        })();
+                    </script>
+                    <script type="text/javascript"
+                        src="https://sb258.infusionsoft.app/app/webTracking/getTrackingCode"></script>
+                    <script type="text/javascript"
+                        src="https://sb258.infusionsoft.com/resources/external/recaptcha/production/recaptcha.js?b=1.70.0.250300-hf-202006252246"></script>
+                    <script
+                        src="https://www.google.com/recaptcha/api.js?onload=onloadInfusionRecaptchaCallback&render=explicit"
+                        async="async" defer="defer"></script>
+                    <script type="text/javascript"
+                        src="https://sb258.infusionsoft.com/app/timezone/timezoneInputJs?xid=6e2d43c91cc91d1db155aa34ee943d3f"></script>
+</body>
+
+</html>
